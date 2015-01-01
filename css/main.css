@@ -1,0 +1,271 @@
+body { margin:0;padding:0;}
+a { text-decoration: none; }
+
+/*-------HEADER--------*/
+
+header {	
+	background-color: rgb(21,21,21);
+	height: 130px;
+}
+header > div {
+	width: 976px;
+	margin: 0 auto;
+}
+header img {
+	margin-top: 32px;
+	float:left;
+}
+header nav {
+	font-family: bulletin_light;
+	float: right;
+	margin-top: 54px;
+	font-size: 21px;
+}
+header nav a {
+	float: left;
+	margin-left: 17px;
+	color: #FFF;
+	padding-bottom: 1px;
+}
+header nav a.active {
+	border-bottom: 1px solid white;
+}
+
+/*-------SLIDEJS--------*/
+
+#slides {
+  display: none
+}
+
+.slidesjs-pagination {
+  margin: 15px auto 0 auto;
+	width: 100%;
+	text-align: center;
+	list-style: none;
+	padding: 0;
+}
+
+.slidesjs-pagination li {
+	float:none;
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.slidesjs-pagination li a {
+  display: block;
+  width: 17px;
+  height: 4px;
+  padding-top: 13px;
+ 	color: rgba(51,51,51,0) !important;
+  background-color: rgb(31,31,31);
+  background-position: 0 0;
+  float: left;
+  overflow: hidden;
+}
+
+.slidesjs-pagination li a.active,
+.slidesjs-pagination li a:hover.active {
+  background-color: rgb(79,153,221);
+  color: rgba(51,51,51,0) !important;
+}
+
+.slidesjs-pagination li a:hover {
+  background-position: 0 -26px
+}
+
+#slides a:link,
+#slides a:visited {
+  color: rgba(51,51,51,0);
+}
+
+#slides a:hover,
+#slides a:active {
+  color: #9e2020
+}
+
+.navbar {
+  overflow: hidden
+}
+
+#slides img {
+	height: 384px;
+	width: 100%;
+}
+
+.slides-container {
+	clear: both;
+  margin: -1px auto;
+  width: 100%;
+  height: 420px;
+}
+
+.slidesjs-container {
+	clear: both;
+  margin: -1px auto;
+  width: 100%;
+  height: 384px !important;
+}
+
+.image-message {
+	color: white;
+	font-family: beausanspro_regular;
+	z-index: 3;
+	position: absolute;
+	bottom: 1px;
+	width: 958px;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	height: 120px;
+	background-color: rgba(0, 0, 0, 0.65);
+	padding:17px 0 0 18px;
+}
+
+.image-message h2 {
+	margin: 0;
+	font-size: 41px;
+	font-weight: 100;
+}
+
+.image-message p {
+	margin:3px 2px;
+	line-height: 1.3;
+	font-size: 17px;
+	font-weight: 100;
+}
+
+/*-------SECTION--------*/
+section {
+	width:976px;
+	margin: 0 auto;
+}
+
+section h1 {
+	float: left;
+	color: rgb(79,153,221);
+	margin: 11px 0 0;
+	font-family: bulletin_medium;
+	font-size: 28px;
+	font-weight: 100;
+
+}
+section hr.begin {
+	float: right;
+	width: 863px;
+	margin-top: 26px;
+	border: 0;
+	height: 3px;
+	background-color: rgb(204,204,204);
+}
+
+
+/*-------NEWS--------*/
+
+.clear {
+	clear:both;
+}
+.news {
+	width: 313px;
+	float:left;
+	margin: 24px 18px 60px 0;
+	font-family: 'bebas_neuebold';
+}
+.last {
+	margin-right: 0 !important;
+}
+.news img {
+	width:100%;
+}
+.news div.date {
+	text-align: center;
+	float:left;
+	display: block;
+	height: 52px;
+	width: 45px;
+	background-color: rgb(4,141,235);
+	color:white;	
+	font-size: 15px;	
+	margin-bottom: 10px;
+	padding-top: 8px;
+}
+.news div.date span {
+	font-size: 34px;
+	display: block;
+	line-height: 0.9;
+}
+.news h3 {
+	float:right;
+	width:215px;
+	margin: 0;	
+	font-size: 19px;
+	padding-top: 5px;
+}
+.news hr {
+	clear:both;
+	margin-top: 10px;
+	width: 100%;
+	border: 0;
+	height: 2px;
+	background-color: rgb(174,174,174);
+}
+.news > div {
+	padding: 14px 20px;
+	background-color: rgb(226,232,244);
+	margin-top: -4px;
+}
+.news p {
+	font-family: 'verdana';
+}
+
+/*-------FOOTER--------*/
+
+footer {	
+	clear: both;
+	background-color: rgb(21,21,21);
+	height: 327px;
+}
+footer > div {
+	width: 976px;
+	margin: 0 auto;
+}
+.footer_menu h3 {
+	font-family: bulletin_regular;
+	color: white;
+	font-weight: 100;
+	font-size: 23px;
+	margin-top: 42px;
+	margin-bottom: 10px;
+}
+.footer_menu ul {
+	font-family: bulletin_light;
+	color:rgb(152,152,152);
+	list-style-type: none;
+	margin: 0;
+	font-size: 18px;
+	padding: 0;
+}
+.footer_menu ul li {
+	margin-bottom: 7px;
+}
+.footer_menu {
+	width:auto;	
+	float:left;	
+	margin: 0 30px 78px 21px;
+}
+
+footer > img {
+	margin:0 auto 13px auto;
+	display: block;
+	width: 224px;
+}
+
+footer .address {
+	font-family: bulletin_light;
+	margin: 0 auto;
+	width: 100%;
+	font-size: 18px;
+	text-align: center;
+	color:rgb(138,138,138);
+}
+

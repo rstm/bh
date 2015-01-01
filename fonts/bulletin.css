@@ -1,0 +1,21 @@
+@font-face {
+    font-family: bulletin_medium;
+    src: url('bulletin/PFBulletinSansPro-Medium.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: bulletin_light;
+    src: url('bulletin/PFBulletinSansPro-Light.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: bulletin_regular;
+    src: url('bulletin/PFBulletinSansPro-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}

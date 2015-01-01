@@ -1,0 +1,21 @@
+body { margin:0; padding:0; background-color:black;  }
+
+#header { margin:0 auto; width: 1024px; }
+
+#site { width:1024px;  background-size:1024px; background-repeat: repeat; margin: 20% auto 0 auto;}
+
+
+
+#lang { /*border: 1px solid blue;*/ width:171px; height:100px; margin:0 auto; margin-top: 10px;}
+#lang img {width:80px; height: 80px; }
+#lang img.left { margin-right: 11px; float:left; }
+#content { color: white; width: 700px;  /* border:1px black solid;*/ margin: 0 auto;}
+#content a { text-decoration: none; color: grey; }
+#content a:hover { text-decoration: underline;}
+
+
+#in { width:100px; border: 1px red solid;}
+
+img.gallery { width:200px; height: 200px; }
+
+table.gallery_table { margin:0 auto; }

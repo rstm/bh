@@ -1,0 +1,32 @@
+<? session_start();
+if($_SESSION['in'] != 1) header("Location: index.php");
+
+$path = $_SERVER['DOCUMENT_ROOT'];
+
+include ($path.'/lib/functions.php');
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="/css/admin.css" rel="stylesheet" /> 
+	<script src="/js/jquery-1.7.2.min.js"></script>
+	<script src="/js/admin.js"></script>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul class='left'>
+				<li><a href='/admin/news.php'>Новости</a></li>
+				<li><a href='/admin/gallery'>Галерея</a></li>
+				<li><a href='#'>Состав команды</a></li>
+				<li><a href='/admin/new.php'>Добавить новость</a></li>
+			</ul>
+			<ul class='right'>
+				<li><a href='#'>Сайт</a></li>
+				<li><a href='/admin/action/action.php?action=out'>Выход</a></li>
+			</ul>
+		</nav>
+		<span class='clear '>			
+		</span>
+	</header>
+	
