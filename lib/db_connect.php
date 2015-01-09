@@ -12,7 +12,7 @@ mysql_select_db("auto",$conn);*/
 define('DB_SERVER', 'localhost');       // IP адрес сервера БД или если локальный ПК localhost
 define('DB_USERNAME', 'root');         // Имя пользователя
 define('DB_PASSWORD', '510311'); // Пароль пользователя
-define('DB_DATABASE', 'mystuff');  
+define('DB_DATABASE', 'battlehall_db');  
 
 class DataBase
 {

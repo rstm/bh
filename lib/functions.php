@@ -65,7 +65,7 @@ function add_news($news) {
 			$date=date("Y-m-d");
 			$time=date("H:i:s");
 			$sql="
-			INSERT INTO `mystuff`.`news` 
+			INSERT INTO `news` 
 			( `pub_date`, `time`, `text`) 
 			VALUES ('{$date}', '{$time}', '{$news}');
 				";

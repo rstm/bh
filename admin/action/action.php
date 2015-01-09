@@ -18,7 +18,7 @@ if ($_GET['action']=='out') {
 }
 
 if ($_POST['action']=='delete') {
-	$sql="delete from `mystuff`.`news` where id={$_POST['id']}";
+	$sql="delete from `news` where id={$_POST['id']}";
 	//echo $sql;
 	$result=mysql_query($sql,Database::$mConnect);
 		 
@@ -43,7 +43,7 @@ if ($_POST['action']=='add') {
 	$date=date("Y-m-d");
 	$time=date("H:i:s");
 	$sql="
-		INSERT INTO `mystuff`.`news` 
+		INSERT INTO `news` 
 		( `pub_date`, `time`, `text`) 
 		VALUES ('{$date}', '{$time}', '{$_POST['news']}');
 	";
