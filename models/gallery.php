@@ -19,7 +19,7 @@ function rrmdir($dir) {
 if ($_POST['action']=='delete') {
 	$sql="delete from $table_name where id={$_POST['id']}";
 	$result=mysql_query($sql,Database::$mConnect);	 
-	rrmdir("$path/gallery/{$_POST['id']}");
+	rrmdir("$path/images/gallery/{$_POST['id']}");
 	header("Location: $return_path");
 }	
 
@@ -32,7 +32,7 @@ if ($_POST['action']=='new') {
 	";
 	$result=mysql_query($sql,Database::$mConnect);
 	$last_id=mysql_insert_id(Database::$mConnect);
-	mkdir("$path/gallery/$last_id");
+	mkdir("$path/images/gallery/$last_id");
 
 	header("Location: $return_path");
 }
