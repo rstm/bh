@@ -32,7 +32,7 @@ if(isset($_COOKIE['remember_token'])) {
 
 <?php 
 if (isset($_GET['err'])) {
-	echo $err;
+	echo $_GET['err'];
 }
 if (!isset($_SESSION['in'])) { ?>
 		<form method="post" action="/models/session.php">
