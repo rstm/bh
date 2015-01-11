@@ -33,16 +33,16 @@ if(isset($_POST['action'])) {
 
 		$query = "SELECT id, password_digest FROM users WHERE login='".mysql_real_escape_string($_POST['login'])."' LIMIT 1";
 			
-		echo $query;
+		//echo $query;
 		$result = mysql_query($query,Database::$mConnect);
 
 	    $data = mysql_fetch_assoc($result);
 
-	    echo '<pre>'; print_r($data); echo '</pre>';
+	   // echo '<pre>'; print_r($data); echo '</pre>';
 
-	    echo $_POST['password'].'</br>';
+	   // echo $_POST['password'].'</br>';
 
-	    echo md5(trim($_POST['password']));
+	   // echo md5(trim($_POST['password']));
 
 
 	    if($data['password_digest'] === md5(trim($_POST['password']))) {
@@ -63,7 +63,6 @@ if(isset($_POST['action'])) {
 	    	$err = 'Неправильный логин или пароль';
 	    	header("Location: /admin?err=$err"); 
 	    }
-
 	}
 }
 
