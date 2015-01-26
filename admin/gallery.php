@@ -5,6 +5,7 @@
 	<div class='actions'>
 		<form method="post" action="/models/gallery.php">
 			<input type='text' name='title' />
+			<input type='date' name='date' />asd
 			<input type='hidden' name='action' value='new'/>
 			<input type="submit" value="Добавить галерею">
 		</form>

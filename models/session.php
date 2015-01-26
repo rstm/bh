@@ -58,6 +58,10 @@ if(isset($_POST['action'])) {
 
 			$result = mysql_query($query,Database::$mConnect) or die(mysql_error());
 
+
+			$_SESSION['authorized'] = true;  
+	  		$_SESSION['ip'] = $_SERVER['REMOTE_ADDR']; 
+  		
 	    	header("Location: /admin/news.php"); 
 	    } else {
 	    	$err = 'Неправильный логин или пароль';
@@ -70,6 +74,18 @@ if (isset($_GET['action'])) {
 	if ($_GET['action']=='delete') {
 		setcookie( "remember_token", "", time() - 3600*24*30*12, "/" );
 		setcookie( "id", "", time() - 3600*24*30*12, "/" );
+
+		$_SESSION = array();
+
+
+		// стираем cookie идентификатора сессии
+		if (isset($_COOKIE[session_name()])) 
+		{
+	   		setcookie(session_name(), '', time()-42000, '/');
+		}
+
+		// уничтожаем сессию
+		session_destroy();
 		
 		header("Location: /admin");
 	}	

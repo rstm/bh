@@ -57,8 +57,21 @@
 </div>
 
 <script src="/js/jquery-1.11.2.min.js"></script>
-<!--script src="js/lightbox.js"></script-->
 <script src="/js/jquery.slides.min.js"></script>
 <script src="/js/main.js"></script>
+<script src="/js/lightbox.js"></script>
+<script src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full" data-id="dgLoader"></script>
+<script type="text/javascript">
+    var map;
+
+    DG.then(function () {
+        map = DG.map('map', {
+            "center": [54.98, 82.89],
+            "zoom": 13
+        });
+
+        DG.marker([54.98, 82.89]).addTo(map);
+    });
+</script>
 </body>
 </html>

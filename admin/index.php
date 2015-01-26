@@ -34,13 +34,12 @@ if(isset($_COOKIE['remember_token'])) {
 if (isset($_GET['err'])) {
 	echo $_GET['err'];
 }
-if (!isset($_SESSION['in'])) { ?>
-		<form method="post" action="/models/session.php">
-		Введите ваши данные: <br>
-		Имя пользователя: <input type="text" name="login" value=""><br>
-		Пароль: <input type="password" name="password" value="">
-		<br>
-		<input type="submit" value="Войти">
-		<input type="hidden" name='action' value="new">
-		</form>	
-<?php } ?>
+?>
+<form method="post" action="/models/session.php">
+Введите ваши данные: <br>
+Имя пользователя: <input type="text" name="login" value=""><br>
+Пароль: <input type="password" name="password" value="">
+<br>
+<input type="submit" value="Войти">
+<input type="hidden" name='action' value="new">
+</form>	

@@ -12,10 +12,25 @@ include 'header.php';
       relative_urls:false
 	});
 </script>
-<form method="post" action="action/action.php">
-	<textarea id='text' name="news" maxlength="99999" rows=10 cols=60 placeholder="Введите текст">
-	</textarea>  
-	<input type='hidden' name='action' value='add'/>
+<form method="post" action="/app/models/news.php">
+	<p>Заголовок: <input type="text" name="title" /></p>
+	<p>Текст: 
+	<textarea id='text' name="text" maxlength="99999" rows=10 cols=60 placeholder="Введите текст">
+	</textarea> 
+	</p> 
+	<input type="hidden" name="action" value="new" />
+	Категория: <select name="category_id">
+		<?php
+			$sql="select * from category_news";
+			$result=mysql_query($sql,Database::$mConnect);
+			while ($row=mysql_fetch_assoc($result)) {
+				print "<option value='{$row['id']}'>{$row['title']}</option>";
+			}
+		?>
+   	</select>
+   	
+	<input type="hidden" name="main" value="0" />
+	<label><input type='checkbox' name='main' value='1' /> На главной</label>
 	<input type="submit" value="Добавить">
 </form>
 <?php include 'footer.php'; ?>

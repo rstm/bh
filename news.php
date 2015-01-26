@@ -1,53 +1,23 @@
-<?php
-include ('header.php');
-
-$sql="select * from users";
-$result=mysql_query($sql,Database::$mConnect);
-
-if(isset($_POST['p'])) $p=$_POST['p'];
-//удаление
- if (!empty($p)&&$_SESSION['admin'] == 1)
- {
- 	//echo '<pre>'; print_r($delete_messages); echo '</pre>';
-		for ($i=0;$i<$p;$i++)
-		 { 
-			if ( isset($_POST['delete_messages'][$i]))
-				 {
-				$sql="delete from messages where id='{$_POST['all_messages'][$i]}'";
-				$result=mysql_query($sql,Database::$mConnect);
-				} 
-		}
-
-		for ($i=0;$i<$p;$i++)
-		 $_POST['delete_messages'][$i]=0;
-		 
- }
-
- //редактирование
-if (!empty($_POST['id'])&&isset($_SESSION['admin']))
-{ $sql=<<<here
-		update messages
-		set
-		text='{$_POST['text2']}'
-		where 
-		id={$_POST['id']};
-here;
-//echo $sql;
-		$result=mysql_query($sql,Database::$mConnect);
-}
-
-
-		
-		if (isset($_SESSION['admin'])) echo "<a href=\"in.php\">Панель управления кланом</a>";
-		
-		$sql2="select * from messages where id_clan={$_GET['id_clan']}";
-		$result2=mysql_query($sql2,Database::$mConnect);
-		
-		show_news();
+<?php 
+include_once '/lib/nav.php';
+$nav[2]['active'] = 'active';
+include_once 'header.php';
 ?>
-</div>
-</div>
-</div>
-
-</body>
-</html>
+	<section>
+		<div class='block news_block'>
+			<div>
+				<h1>НОВОСТИ</h1>
+			 	<hr noshade class='block_header' > 
+			
+				<div class='clear'></div>
+				<?php
+					$category_id = (isset($_GET['category_id']) ? mysql_real_escape_string($_GET['category_id']) : 0 );
+					$sql="select * from news where category_id=$category_id ORDER BY pub_date DESC, time DESC ";
+					$result=mysql_query($sql,Database::$mConnect);
+					show('news/index.php',$result);
+				?>			
+				<a class='more' href='#'>Еще больше минералов</a>
+			</div>
+		</div>
+	</section>
+<?php include_once 'footer.php'; ?>

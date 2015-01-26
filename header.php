@@ -1,4 +1,7 @@
-<?php header('Content-Type: text/html; charset=utf-8'); ?>
+<?php header('Content-Type: text/html; charset=utf-8'); 
+$path = $_SERVER['DOCUMENT_ROOT'];
+include ($path.'/lib/functions.php');
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -8,11 +11,12 @@
 <link href="fonts/bebasneue.css" rel="stylesheet" type="text/css"  /> 
 <link href="fonts/bulletin.css" rel="stylesheet" type="text/css"  /> 
 <link href="fonts/beausanspro.css" rel="stylesheet" type="text/css"  />
-<link href="css/main.css" rel="stylesheet" type="text/css"  />
+<link href="fonts/roboto/roboto.css" rel="stylesheet" type="text/css"  />
 <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+<link href="css/lightbox.css" rel="stylesheet" type="text/css"  /> 
 <link href="fonts/bebasneue.css" rel="stylesheet" type="text/css"  /> 
 <link href="fonts/bulletin.css" rel="stylesheet" type="text/css"  /> 
 <link href="fonts/beausanspro.css" rel="stylesheet" type="text/css"  />
@@ -23,47 +27,29 @@
 	<div>
 		<img src='/images/logo.png' />
 		<nav>
-			<a href='#'>О КЛУБЕ</a>
-			<a href='#'>КАЛЕНДАРЬ</a>
-			<a class='active' href='#'>НОВОСТИ</a>
-			<a href='#'>КОМАНДА</a>
-			<a href='#'>КОНТАКТЫ</a>
-			<a href='#'>СТРИМЫ</a>
+			<?php 
+				//echo '<pre>'; print_r($nav); echo '</pre>';
+				foreach ($nav as $menu_element) {
+					print "
+						<div>
+						<a href='{$menu_element['url']}' class='{$menu_element['active']}'>
+							{$menu_element['title']}
+					";
+					if (isset($menu_element['sub_menu'])) {
+						print "							
+							<span>|</span></a>
+							<div class = 'sub_menu'>";
+						foreach ($menu_element['sub_menu'] as $key => $sub_menu_element) {
+								print "<a href='#'>{$sub_menu_element['title']}</a>";
+						}
+						print '</div>';
+					} else print '</a>';
+					print '</div>';
+				}
+			?>
 		</nav>		
 	</div>
 </header>
-<div class="slides-container">
-	<div id="slides">
-		<div>
-			<div class='image-message'>
-				<h2>BATTLE HALL</h2>
-				<p>
-					Lorem ipsum dolor sit amet, nec delenit salutandi 
-					intellegat ea, <br/> ius vero maiestatis adversarium in. 
-					Eam fierent concludaturque an. 
-				</p>
-			</div>
-    		<img src="/images/slide1.png" alt='asd' >  
-    	</div>
-    <div>
-			<div class='image-message'>
-				<h2>BATTLE HALL</h2>
-			</div>
-    		<img src="/images/slide1.png" >  
-    </div>
-    <div>
-			<div class='image-message'>
-				<h2>BATTLE HALL</h2>
-			</div>
-    		<img src="/images/slide1.png" >  
-    </div>
-    <div>
-			<div class='image-message'>
-				<h2>BATTLE HALL</h2>
-			</div>
-    		<img src="/images/slide1.png" >  
-    </div>
-  </div>
-</div>
+
 
 
