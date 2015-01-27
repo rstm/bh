@@ -180,6 +180,9 @@ label { display: block; margin:5px; }
 	color: black !important;
 	text-decoration: none !important;
 }
+.delete_image:hover {
+	text-decoration: underline;
+}
 
 .photos img {
 	max-width: 313px;

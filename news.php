@@ -1,10 +1,11 @@
 <?php 
-include_once '/lib/nav.php';
+$path = $_SERVER['DOCUMENT_ROOT'];
+include_once $path.'/lib/nav.php';
 $nav[2]['active'] = 'active';
 include_once 'header.php';
 ?>
 	<section>
-		<div class='block news_block'>
+		<div class='block'>
 			<div>
 				<h1>НОВОСТИ</h1>
 			 	<hr noshade class='block_header' > 
@@ -16,7 +17,8 @@ include_once 'header.php';
 					$result=mysql_query($sql,Database::$mConnect);
 					show('news/index.php',$result);
 				?>			
-				<a class='more' href='#'>Еще больше минералов</a>
+				<span class='more'>Еще больше минералов</span>
+				<img class='loading' src='/images/loading.gif' />
 			</div>
 		</div>
 	</section>

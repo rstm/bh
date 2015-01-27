@@ -28,7 +28,7 @@
 		print "
 			<div>
 			 	<div class='date'><span>$day</span> $month[$i] $year</div>
-				<h3> {$row['title']} </h3>";
+				<a href='/news/show.php?id={$row['id']}'>{$row['title']}</a>";
 		if (!sign_in())	print "<hr>
 						<div class='anons'>$anons</div>";
 		if (sign_in()) {

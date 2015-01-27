@@ -9,8 +9,7 @@
 		//echo $min; echo $max;
 		while ($row=mysql_fetch_array($result))
 		{
-			if ($s>=$min && $s<=$max)
-			{
+			
 			print "<div class='galleries'>";
 			
 			
@@ -24,9 +23,8 @@
 				 	</form>
 					</div>
 				";
-		}
-		
 			}
+		
 		
 			$s++;			
 		}	

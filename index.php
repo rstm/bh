@@ -59,7 +59,7 @@ include_once 'header.php'; ?>
 		<div class='block system_info'>
 			<div>
 				<div class='oblique_line left_side'></div>
-				<h1>ХАРАКТЕРИСТИКИ</h1>
+				<h1 id="system_info" >ХАРАКТЕРИСТИКИ</h1>
 				<div class='oblique_line right_side'></div>
 				<div class='spec'>
 					<img src='/images/spec.png' />
@@ -91,7 +91,7 @@ include_once 'header.php'; ?>
 
 		<div class='block prices'>
 			<div>
-				<h1>ЦЕНЫ</h1>
+				<h1 id="prices">ЦЕНЫ</h1>
 			 	<hr noshade class='block_header' > 			
 				<div class='clear'></div>
 				<ul>

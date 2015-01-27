@@ -5,13 +5,15 @@ $s=1;
 		else $min=1;
 		$max=$min+4;
 
-		echo "<div class='photos'>";
+		//echo "<div class='photos'>";
 		while ($row=mysql_fetch_assoc($result))
 		{
 			
-				$last = ( $s % 3 == 0 ) ? 'last' : '';
+				$position = ( $s % 3 == 0 ) ? 'last' : '';
+
+
 			 	print "
-			 		<div class='$last image'>
+			 		<div class='$position image'>
 				 		<a data-lightbox='set{$row['gallery_id']}' href='/images/gallery/{$row['gallery_id']}/{$row['id']}.png'>
 					 		<img src='/images/gallery/{$row['gallery_id']}/{$row['id']}.png' />
 					 	</a>
@@ -29,8 +31,7 @@ $s=1;
 				print '</div>';	
 			$s++;			
 		}	
-		if(!sign_in()) print "<div class='last more_images'>Нужно больше золота-</div>";
 			
-		echo '</div>';
+		//echo '</div>';
 
 		?>

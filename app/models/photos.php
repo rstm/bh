@@ -33,9 +33,9 @@ if ($_POST['action']=='new') {
 	//$uploadfile = $uploaddir.$last_id.$_FILES['userfile']['name'];
 	$uploadfile = $uploaddir.$last_id.'.png';
 
-	echo $uploadfile;
+	//echo $uploadfile;
 
-	echo '<pre>'; print_r($_FILES); echo '</pre>';
+	//echo '<pre>'; print_r($_FILES); echo '</pre>';
 	
 	 if($_FILES['userfile']['size'] != 0 and $_FILES['userfile']['size']<=1002400000) 
 	 { // Здесь мы проверяем размер если он более 1 МБ

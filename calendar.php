@@ -17,30 +17,21 @@ include_once 'header.php'; ?>
 						$month = array("ЯНВАРЯ", "ФЕВРАЛЯ", "МАРТА", "АПРЕЛЯ", "МАЯ", "ИЮНЯ", "ИЮЛЯ", "АВГУСТА", "СЕНТЯБРЯ", "ОКТЯБРЯ", "НОЯБРЯ", "ДЕКАБРЯ");
 						$day = date('j', $timestamp);
 						$i = date('n', $timestamp);
+						$title = mb_strtoupper($gallery['title'], 'UTF-8');
 						print "			
-							<h1>$day {$month[$i]}</h1>
-						 	<hr noshade class='block_header' > 
+							<h1>$day {$month[$i]} | {$title}</h1>
+						 	<hr noshade class='block_header' >
+						 	<div class='photos'> 
 						";
 						$sql = "select * from photos 
 								where gallery_id = {$gallery['id']} LIMIT 5";
 						$result2 = mysql_query($sql,Database::$mConnect);
 						show('photos/index.php',$result2);
+						print "<a href='/gallery.php?id={$gallery['id']}'><div class='last more_images'>Нужно больше золота-</div></a>";
+						print "</div>";
 					}
 					
-				?>
-				<!--div class='photos'>
-					<img src='/images/halflife.png' />
-				
-					<img src='/images/halflife.png' />
-				
-					<img class='last' src='/images/halflife.png' />
-
-					<img src='/images/halflife.png' />
-				
-					<img src='/images/halflife.png' />
-				
-					<img class='last' src='/images/halflife.png' />
-				</div-->				
+				?>				
 			</div>
 		</div>
 	</section>

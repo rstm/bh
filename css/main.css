@@ -33,7 +33,7 @@ header nav > div a {
 }
 header nav > div a.active {
 	//border-bottom: 1px solid white;
-	color: rgb(4, 141, 235);
+	color: #048deb;
 }
 
 header nav > div a:hover {
@@ -62,6 +62,28 @@ header nav > div a span {
 	margin-top: -1px;
 }
 
+.sub_menu {
+	display: none;
+	border-top: 1px solid rgb(74, 74, 74);
+	position: absolute;
+	font-family: roboto_condensedlight;
+	margin-top: 0px;
+	padding-top: 10px;
+	font-size: 14px;
+}
+.sub_menu a {
+	float: left;
+	color: #FFF;
+	padding-bottom: 1px;
+	margin-left: 12px;
+}
+.sub_menu a:first-child {
+	margin-left: 0;
+}
+
+.block {
+	padding: 46px 0;
+}
 /*-------SLIDEJS--------*/
 
 #slides {
@@ -183,7 +205,7 @@ section div.block > div {
 section h1 {
 	float: left;
 	color: rgb(79,153,221);
-	margin: -14px 10px 34px 0;
+	margin: -14px 10px 30px 0;
 	//font-family: bulletin_medium;
 	font-family: robotoregular;
 	font-size: 22px;
@@ -222,7 +244,7 @@ section hr.block_header::after {
 .news {
 	width: 313px;
 	float:left;
-	margin: 24px 18px 20px 0;
+	margin: 0 18px 20px 0;
 	font-family: 'bebas_neuebold';
 }
 .last {
@@ -248,12 +270,16 @@ section hr.block_header::after {
 	display: block;
 	line-height: 0.9;
 }
-.news h3 {
+.news a {
 	float:right;
 	width:215px;
 	margin: 0;	
 	font-size: 19px;
 	padding-top: 5px;
+	color: black;
+}
+.news a:hover {
+	color: rgb(4, 141, 201);
 }
 .news hr {
 	clear:both;
@@ -303,7 +329,7 @@ footer {
 	clear: both;
 	background-color: rgb(21,21,21);
 	height: 327px;
-	margin-top: 50px;
+	//margin-top: 50px;
 }
 footer > div {
 	width: 976px;
@@ -328,10 +354,17 @@ footer > div {
 .footer_menu ul li {
 	margin-bottom: 7px;
 }
-.footer_menu {
+.footer_menu ul li a{
+	color: rgb(152,152,152);
+}
+.footer_menu div{
 	width:auto;	
 	float:left;	
 	margin: 0 30px 78px 21px;
+}
+
+.footer_menu div:last-child {
+	margin-right: 0px !important;
 }
 
 footer > img {
@@ -472,7 +505,7 @@ footer .address {
 	vertical-align: middle;
 	text-align: center;
 	line-height: 77px;
-	font-size: 29px;
+	font-size: 23px;
 	float: right;
 	margin-top: -30px;
 	background-color: white;
@@ -485,12 +518,12 @@ footer .address {
 	//margin-top: 30px;
 }
 
-.calendar div {
+.calendar > div {
 	clear: both;
-	margin-bottom: 40px;
+	margin-bottom: 26px;
 }
 
-.calendar div::after {
+.calendar > div::after {
     content: '';
     display: block;
     clear: both;
@@ -509,10 +542,14 @@ footer .address {
 	margin: 0 18px 18px 0;
 	overflow: hidden;
 	display: inline-block;
-	clear: none !important;
+	//clear: none !important;
 }
 
-.photos div.last {
+section div.first {
+	clear:both;
+}
+
+section div.more_images {
 	float: left !important;
 	clear: none;
 	width: 313px;
@@ -525,6 +562,7 @@ footer .address {
 	line-height: 175px;
 	font-size: 19px;
 	cursor: pointer;
+	margin-bottom: 41px;
 }
 
 .calendar::after {
@@ -535,6 +573,18 @@ footer .address {
     visibility: hidden;
 }
 
+.photos {
+	clear: both;
+	width: 976px;
+}
+
+.photos::after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0px;
+    visibility: hidden;
+}
 
 
 /* ie8 
@@ -544,28 +594,23 @@ clearfix::after {
     clear: both;
 }*/
 
-.sub_menu {
-	display: none;
-	border-top: 1px solid rgb(74, 74, 74);
-	position: absolute;
-	font-family: roboto_condensedlight;
-	margin-top: 0px;
-	padding-top: 10px;
-	font-size: 14px;
-}
-.sub_menu a {
-	float: left;
-	color: #FFF;
-	padding-bottom: 1px;
-	margin-left: 12px;
-}
-.sub_menu a:first-child {
-	margin-left: 0;
+/*-------SHOW NEWS--------*/
+
+.show_news {
+	font-family: tahoma;
 }
 
-.block {
-	padding: 46px 0;
+.show_news h1 { margin-bottom: 0; }
+.show_news h2 { 
+	margin: 12px 0;
+	font-weight: normal;
+	font-size: 27px; 
 }
+.show_news .date {
+	font-size: 14px;
+}
+
+/*-------CONTACTS--------*/
 
 .about img {
 	display: inline-block;
@@ -574,23 +619,54 @@ clearfix::after {
 
 .about .info {
 	display: inline-block;
-	width: 500px;
+	width: 470px;
 	vertical-align: top;
+	font-family: verdana;
+	margin-left: 29px;
 }
 
+.about .info h2 {
+	font-size: 23px;
+	font-weight: 100;
+	margin: 0; 
+}
+
+.about .info hr {
+	border: 0;
+	height: 2px;
+	width: 210px;
+	background-color: #4f99dd;
+	margin: 22px 0 0 0;
+}
 .social {
 	text-align: center;
+	font-size: 27px;
+	font-family: robotoregular;
+	margin: 20px 0 62px 0;
+
 }
 
-.social div {
-	padding: 20px 50px;
+.social a {
 	display: inline-block;
+	width: 254px;
+	height: 56px;
+	line-height: 56px;	
+	color: white;
 }
 
-.social div:first-child {
-	background-color: blue;
+.social a:first-child {
+	background-color: #4d9feb;
 }
 
-.social div:last-child {
-	background-color: red;
+.social a:last-child {
+	background-color: #ed4e47;
+	margin-left: 81px;
+}
+
+#map {
+	width:100%; height:400px; margin-top: -46px;
+}
+
+.error {
+	font-family: tahoma;
 }
