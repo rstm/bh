@@ -12,7 +12,7 @@ include_once 'header.php';
 			
 				<div class='clear'></div>
 				<?php
-					$category_id = (isset($_GET['category_id']) ? mysql_real_escape_string($_GET['category_id']) : 0 );
+					$category_id = (isset($_GET['category_id']) ? mysql_real_escape_string($_GET['category_id']) : 2 );
 					$sql="select * from news where category_id=$category_id ORDER BY pub_date DESC, time DESC ";
 					$result=mysql_query($sql,Database::$mConnect);
 					show('news/index.php',$result);
