@@ -26,8 +26,6 @@ $year = date('o', $timestamp);
 			<div class='text'>
 				<?=$news['text']?>
 			</div>
-			<span class='more'>Еще больше минералов</span>
-			<img class='loading' src='/images/loading.gif' />
 		</div>
 	</div>
 </section>
