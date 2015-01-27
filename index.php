@@ -1,5 +1,6 @@
 <?php 
-include_once '/lib/nav.php';
+$path = $_SERVER['DOCUMENT_ROOT'];
+include_once $path.'/lib/nav.php';
 $nav[0]['active'] = 'active';
 include_once 'header.php'; ?>
 
@@ -123,4 +124,4 @@ include_once 'header.php'; ?>
 			</div>
 		</div>
 	</section>
-<?php include_once 'footer.php'; ?>
+<?php include_once $path.'/footer.php'; ?>

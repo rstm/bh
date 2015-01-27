@@ -22,4 +22,4 @@ include_once 'header.php';
 			</div>
 		</div>
 	</section>
-<?php include_once 'footer.php'; ?>
+<?php include_once  $path.'/footer.php'; ?>
