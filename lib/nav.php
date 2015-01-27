@@ -12,7 +12,7 @@ $nav = array(
 				array('title' => 'Будущее', 'url' => '#')
 			)
 		),
-		array( 'title' => 'НОВОСТИ', 'url' => '/news/?category_id=1', 'active' => '',
+		array( 'title' => 'НОВОСТИ', 'url' => '/news/?category_id=2', 'active' => '',
 			'sub_menu' => array( 
 				array('title' => 'Мир', 'url' => '/news/?category_id=1'),
 				array('title' => 'Россия', 'url' => '/news/?category_id=3'),
