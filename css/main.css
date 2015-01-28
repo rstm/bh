@@ -613,6 +613,7 @@ clearfix::after {
 .about img {
 	display: inline-block;
 	margin-bottom: 40px;
+	width: 455px;
 }
 
 .about .info {
