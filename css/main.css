@@ -416,7 +416,7 @@ footer .address {
  	-moz-transform: rotate(124deg);
   	-ms-transform: rotate(124deg);
    	-o-transform: rotate(124deg);   	
-	margin-left: -37px;
+	margin-left: -33px;
 }
 .right_side {
  	-webkit-transform: rotate(-124deg);
@@ -479,11 +479,9 @@ footer .address {
 	clear: both;
 	margin-bottom: 44px;
 	float: left;
-	background: url('/images/dotted.png');
-	background-repeat: repeat-x;
+	background: url("/images/dotted.png") repeat-x scroll 0% 24px transparent;
 	width: 100%;
 	z-index: -1;
-	background-position-y: 24px;
 }
 .prices li hr {
 	overflow: hidden;
