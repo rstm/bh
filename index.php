@@ -98,11 +98,11 @@ include_once 'header.php'; ?>
 				<ul>
 					<li >
 						<span class='time'>Час игры</span>
-						<div class='price'>50.-</div>
+						<div class='price'>60.-</div>
 					</li>
 					<li>
 						<span class='time'>Час игры Vip зона
-						</span><div class='price'>60.-</div>
+						</span><div class='price'>70.-</div>
 					</li>
 					<li>
 						<span class='time'>Час аренда зала (12 ПК)

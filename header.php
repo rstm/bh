@@ -25,7 +25,7 @@ include ($path.'/lib/functions.php');
 <body>
 <header>
 	<div>
-		<img src='/images/logo.png' />
+		<a href='/'><img src='/images/logo.png' /></a>
 		<nav>
 			<?php 
 				//echo '<pre>'; print_r($nav); echo '</pre>';

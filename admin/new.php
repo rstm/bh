@@ -30,7 +30,9 @@ include 'header.php';
    	</select>
    	
 	<input type="hidden" name="main" value="0" />
-	<label><input type='checkbox' name='main' value='1' /> На главной</label>
+	<label><input type='checkbox' name='main' value='1' />На главной</label>
+	<input type="hidden" name="tournament" value="0" />
+	<label><input type='checkbox' name='tournament' value='1' />Турнир</label>
 	<input type="submit" value="Добавить">
 </form>
 <?php include 'footer.php'; ?>

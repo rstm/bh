@@ -20,7 +20,7 @@ check_login();
 				<li><a href='/admin/news.php'>Новости</a></li>
 				<li><a href='/admin/gallery'>Галерея</a></li>
 				<li><a href='#'>Состав команды</a></li>
-				<li><a href='/admin/new.php'>Добавить новость</a></li>
+				<li><a href='/admin/new.php'>Добавить новость/турнир</a></li>
 			</ul>
 			<ul class='right'>
 				<li><a href='#'>Сайт</a></li>

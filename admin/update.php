@@ -30,6 +30,7 @@ print<<<here
 here;
 
 $checked = ($row['main'] == 1) ? 'checked' : '';
+$tournament = ($row['tournament'] == 1) ? 'checked' : '';
 
 print<<<here
 <input type="hidden" name="id" value="{$row['id']}">
@@ -37,6 +38,9 @@ print<<<here
 
 <input type="hidden" name="main" value="0" />
 <label><input $checked type='checkbox' name='main' value='1' /> На главной</label>
+
+<input type="hidden" name="tournament" value="0" />
+<label><input $tournament type='checkbox' name='tournament' value='1' /> На главной</label>
 
 <input type="submit" value="Обновить">
 </form>

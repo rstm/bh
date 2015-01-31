@@ -42,7 +42,8 @@
 			 	</form>
 				
 			";
-			if ($row['main']) echo '| На главной';
+			if ($row['main']) echo '| На главной ';
+			if ($row['tournament']) echo '| Турнир ';
 		}
 		echo '</div></div>';
 			
