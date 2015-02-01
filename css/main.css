@@ -16,43 +16,70 @@ header img {
 	margin-top: 32px;
 	float:left;
 }
+
+
 header nav {
 	font-family: bulletin_light;
 	float: right;
 	margin-top: 55px;
 	font-size: 21px;
 }
-header nav > div {
-	float: left;
+
+header nav ul ul {
+	display: none;
+}
+
+
+header nav ul li:hover > ul {
+		display: block;
+	}
+
+header nav > ul {
+	list-style: none;
+	position: relative;
+	display: inline-table;
 	margin-left: 17px;
 	padding-bottom: 11px;
+	margin: 0 ;
+	//width: 651px;
+	//margin-right: -100px !important;
 }
-header nav > div a {
+
+header nav ul:after {
+		content: ""; clear: both; display: block;
+	}
+
+
+header nav ul li {
+	float: left;
+	margin-left: 17px;
+}
+
+header nav ul {
+	margin: 0;
+}
+
+
+
+header nav > ul a {
 	color: #FFF;
 	text-align: center;
 }
-header nav > div a.active {
+header nav > ul a.active {
 	//border-bottom: 1px solid white;
 	color: #048deb;
 }
 
-header nav > div a:hover {
+header nav > ul a:hover {
 	color: #048deb;
 }
 
-header nav > div:hover .sub_menu, header nav > div:hover a span {
+
+header nav li:hover .sub_menu, header nav li:hover a span {
 	display: block;
 }
 
-
-
-header nav > div a:hover span{
-	display: block;
-}
-
-
-
-header nav > div a span {
+header nav > ul a span {
 	display: none;
 	font-size: 13px;
 	color: rgb(74, 74, 74);
@@ -63,6 +90,7 @@ header nav > div a span {
 }
 
 .sub_menu {
+	//width: 600px;
 	display: none;
 	border-top: 1px solid rgb(74, 74, 74);
 	position: absolute;
@@ -70,15 +98,26 @@ header nav > div a span {
 	margin-top: 0px;
 	padding-top: 10px;
 	font-size: 14px;
+	position: absolute; 
+	padding-left: 0;
+
 }
-.sub_menu a {
+.sub_menu li {
 	float: left;
 	color: #FFF;
 	padding-bottom: 1px;
 	margin-left: 12px;
 }
-.sub_menu a:first-child {
+.sub_menu li:first-child {
 	margin-left: 0;
+}
+
+.sub_menu.fourth {
+	right: 82px;
+}
+
+.sub_menu.fifth {
+	right: 0px;
 }
 
 .block {
@@ -543,10 +582,26 @@ footer .address {
 	//clear: none !important;
 }
 
-.calendar h2 {
+.calendar .title {
 	clear: both;
+	font-family: 'verdana';
+	font-size: 21px;
+	display: table;
+	margin-top: 26px;
+	color: black;
 }
 
+.calendar .title:hover {
+	color: rgb(4, 141, 201);
+}
+
+.calendar .anons {
+	font-family: 'verdana';
+	font-size: 15px;
+}
+.calendar .anons p {
+	margin: 7px 0;
+}
 .calendar h1 {
 	margin-bottom: 0;
 }

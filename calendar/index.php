@@ -18,12 +18,11 @@ include_once $path.'/header.php'; ?>
 						$month = array("ЯНВАРЯ", "ФЕВРАЛЯ", "МАРТА", "АПРЕЛЯ", "МАЯ", "ИЮНЯ", "ИЮЛЯ", "АВГУСТА", "СЕНТЯБРЯ", "ОКТЯБРЯ", "НОЯБРЯ", "ДЕКАБРЯ");
 						$day = date('j', $timestamp);
 						$i = date('n', $timestamp) - 1;
-						$title = mb_strtoupper($tournament['title'], 'UTF-8');
 						print "			
 							<h1>$day {$month[$i]}</h1>
 						 	<hr noshade class='block_header' >
-						 	<h2>$title</h2>
-						 	{$tournament['anons']}
+						 	<a href='/news/show.php?id={$tournament['id']}' class='title'>{$tournament['title']}</a>
+						 	<div class='anons'>{$tournament['anons']}</div>
 						 	<div class='photos'> 
 						";
 						$sql = "select * from photos 

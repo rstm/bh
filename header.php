@@ -27,26 +27,39 @@ include ($path.'/lib/functions.php');
 	<div>
 		<a href='/'><img src='/images/logo.png' /></a>
 		<nav>
+			<ul>
 			<?php 
 				//echo '<pre>'; print_r($nav); echo '</pre>';
+				$s = 0;
 				foreach ($nav as $menu_element) {
+					switch ($s) {
+						case 4:
+							$position = 'fourth';
+							break;
+						case 5:
+							$position = 'fifth';
+							break;
+						
+						default:
+							$position = '';
+							break;
+					}
 					print "
-						<div>
-						<a href='{$menu_element['url']}' class='{$menu_element['active']}'>
-							{$menu_element['title']}
-					";
-					if (isset($menu_element['sub_menu'])) {
-						print "							
-							<span>|</span></a>
-							<div class = 'sub_menu'>";
-						foreach ($menu_element['sub_menu'] as $key => $sub_menu_element) {
-								print "<a href='{$sub_menu_element['url']}'>{$sub_menu_element['title']}</a>";
-						}
-						print '</div>';
-					} else print '</a>';
-					print '</div>';
+						<li>
+							<a href='{$menu_element['url']}' class='{$menu_element['active']}'>
+								{$menu_element['title']}						
+								<span>|</span>
+							</a>
+						<ul class = 'sub_menu $position'>";
+					foreach ($menu_element['sub_menu'] as $key => $sub_menu_element) {
+							print "<li><a href='{$sub_menu_element['url']}'>{$sub_menu_element['title']}</a></li>";
+					}
+					print '</ul>';
+					print '</li>';
+					$s++;
 				}
 			?>
+			</ul>
 		</nav>		
 	</div>
 </header>
