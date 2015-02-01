@@ -855,3 +855,12 @@ clearfix::after {
 .person.right {
 	float: right;
 }
+
+.games li a{
+	color: rgb(79,153,221);
+	font-family: robotoregular;
+	font-size: 22px;
+	font-weight: 100;
+	margin: 10px;
+}
+
