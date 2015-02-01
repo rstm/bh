@@ -66,10 +66,8 @@ include_once 'header.php'; ?>
 					<img src='/images/spec.png' />
 					<ul>
 						<li>
-							Видеокарта: Gigabyte PCI-E NV<br>
-							GV-N570OC-13lGTX570<br>
-							OC 1280 Mb 320 DDR5 780/3800<br> 
-							D-DVI*2+HDMI RTL
+							Видеокарта: ASUS GTX780-DC2OC-3GD5
+							3072МБ,<br>GDDR5, Retail
 						</li>
 						<li>
 							Жесткий диск: WD Original SATA-II<br> 
