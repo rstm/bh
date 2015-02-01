@@ -25,7 +25,7 @@ include_once 'header.php'; ?>
 
 		 	<div class='social'>
 		 		<a href='https://vk.com/battlehall'>ВКОНТАКТЕ</a>
-		 		<a href='https://youtube.com/battlehall'>YOUTUBE</a>
+		 		<a href='http://www.youtube.com/channel/UCwXUHVuYcenAvyoqJ2hS_vg'>YOUTUBE</a>
 		 	</div>
 
 		 	<h1 id='look_map' >КАК ДОБРАТЬСЯ</h1>
