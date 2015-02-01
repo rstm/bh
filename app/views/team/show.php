@@ -9,8 +9,8 @@ while ($row=mysql_fetch_assoc($result)) {
 	<div class='person <?=$position?>'>
 		<img src='/images/team.png' />
 		<div class='info'>
-			<span><?=$row['name']?></span>
-			<p>Team Leader</p>
+			<span><?=$row['first_field']?></span>
+			<p><?=$row['second_field']?></p>
 		</div>
 	</div>
 		

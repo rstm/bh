@@ -15,15 +15,15 @@ include_once $path.'/header.php'; ?>
 					<div class='person'>
 						<img src='/images/team.png' />
 						<div class='info'>
-							<span>Евгений Алексеев</span>
-							<p>Главный чел</p>
+							<span>Эльвира Валиуллина</span>
+							<p>Испольнительный директор</p>
 						</div>
 					</div>
 					<div class='person second left'>
 						<img src='/images/team.png' />
 						<div class='info'>
-							<span>Эльвира Валиуллина</span>
-							<p>Испольнительный директор</p>
+							<span>Евгений Алексеев</span>
+							<p>Администратор и еще нечто большее</p>
 						</div>
 					</div>
 					<div class='person right'>
