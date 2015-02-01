@@ -12,9 +12,9 @@
 	</div>
 <?php
 	
-	$sql="select * from galleries";
+	$sql="select * from news where tournament = 1 ORDER BY tournament_date DESC";
 	$result=mysql_query($sql,Database::$mConnect);
-	show('galleries/index.php',$result);
+	show('admin/tournaments.php',$result);
 
 ?>
 </div>

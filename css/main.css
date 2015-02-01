@@ -543,6 +543,15 @@ footer .address {
 	//clear: none !important;
 }
 
+.calendar h2 {
+	clear: both;
+}
+
+.calendar h1 {
+	margin-bottom: 0;
+}
+
+
 section div.first {
 	clear:both;
 }
@@ -560,7 +569,7 @@ section div.more_images {
 	line-height: 175px;
 	font-size: 19px;
 	cursor: pointer;
-	margin-bottom: 41px;
+	//margin-bottom: 41px;
 }
 
 .calendar::after {
@@ -574,6 +583,7 @@ section div.more_images {
 .photos {
 	clear: both;
 	width: 976px;
+	padding: 18px 0;
 }
 
 .photos::after {
@@ -663,9 +673,130 @@ clearfix::after {
 }
 
 #map {
-	width:100%; height:400px; margin-top: -46px;
+	width:976px; height:400px;
+	// margin-top: -46px;
+	display: block;
+	margin: -46px auto 0 auto;
 }
 
 .error {
 	font-family: tahoma;
+}
+
+
+/*-------MEDIA--------*/
+
+.media .first {
+	width:100% !important;
+}
+
+.media .first .url {
+	float:left;
+}
+.media .first .info {
+	float:left;
+	margin: 0 0 0 37px;
+	width: 288px;
+	height: 264px;
+}
+
+.media .first .url iframe {
+	width: 521px;
+	height: 293px;
+	float:left;
+}
+
+.media .video {
+	width: 313px;
+	float:left;
+	margin: 0 18px 20px 0;
+	font-family: 'bebas_neuebold';
+}
+.last {
+	margin-right: 0 !important;
+}
+.video img {
+	width:100%;
+}
+
+.video .info {
+	padding: 10px 20px;
+	background-color: rgb(226,232,244);
+	margin-top: -4px;
+	border-bottom: 9px solid #048deb;
+}
+.video .anons {
+	font-family: 'verdana';
+	font-size: 15px;
+	height: 100px;
+	margin-bottom: 8px;
+}
+.video .anons p {
+	margin:5px 0;
+}
+
+.video hr {
+	clear:both;
+	margin-top: 10px;
+	width: 100%;
+	border: 0;
+	height: 2px;
+	background-color: rgb(174,174,174);
+}
+
+.video span {
+	font-family: 'tahoma';
+	margin: 0;
+	font-size: 19px;
+	color: black;
+}
+
+
+/*-------TEAM--------*/
+
+.persons {
+	width: 860px;
+	margin: 47px auto;
+}
+
+.person {
+	width: 390px;
+	margin: 48px 0 0 0 ;
+}
+
+.person img {
+	float: left;
+}
+
+.person .info {
+	float: left;
+	margin: 14px 0 0 27px;
+	width: 218px;
+}
+
+.person span {
+	font-family: 'tahoma';
+	font-size: 18px;
+	display: block;
+	width: 218px;
+	padding-bottom: 21px;
+	border-bottom: 2px solid #048deb;
+}
+
+.team .second {
+	clear: both;
+}
+
+.team p {
+	font-family: 'verdana';
+	font-size: 15px;
+	margin: 12px 0;
+}
+
+.person.left {
+	float: left;
+}
+
+.person.right {
+	float: right;
 }

@@ -2,7 +2,7 @@
 $path = $_SERVER['DOCUMENT_ROOT'];
 include_once $path.'/lib/nav.php';
 $nav[1]['active'] = 'active';
-include_once 'header.php'; ?>
+include_once $path.'/header.php'; ?>
 	<section>
 		<div class='block calendar'>
 			<div>
@@ -10,7 +10,7 @@ include_once 'header.php'; ?>
 				<!--div class='clear'></div-->
 
 				<?php
-					$sql="select * from news where tournament = 1 ORDER BY tournament_date DESC";
+					$sql="select * from news where tournament = 1 AND tournament_date >= NOW() ORDER BY tournament_date DESC";
 					$result=mysql_query($sql,Database::$mConnect);
 					//
 					while ($tournament=mysql_fetch_array($result)) {

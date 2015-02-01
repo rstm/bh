@@ -2,7 +2,7 @@
 $path = $_SERVER['DOCUMENT_ROOT'];
 include_once $path.'/lib/nav.php';
 $nav[1]['active'] = 'active';
-include_once 'header.php'; ?>
+include_once $path.'/header.php'; ?>
 	<section>
 		<div class='block calendar'>
 			<div>

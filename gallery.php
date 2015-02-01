@@ -8,12 +8,16 @@ include_once 'header.php'; ?>
 			<div>
 				<?php
 					$gallery_id = mysql_real_escape_string($_GET['id']);
-					$sql="select * from galleries where id = $gallery_id LIMIT 1";
+					$sql="select * from news where id = $gallery_id LIMIT 1";
 					$result=mysql_query($sql,Database::$mConnect);
 					$gallery=mysql_fetch_assoc($result);	
 					$gallery_title = mb_strtoupper($gallery['title'], 'UTF-8');					
-				?>	
-					<h1><?=$gallery_title?></h1>
+					$timestamp = strtotime( $gallery['tournament_date']);
+					$month = array("ЯНВАРЯ", "ФЕВРАЛЯ", "МАРТА", "АПРЕЛЯ", "МАЯ", "ИЮНЯ", "ИЮЛЯ", "АВГУСТА", "СЕНТЯБРЯ", "ОКТЯБРЯ", "НОЯБРЯ", "ДЕКАБРЯ");
+					$day = date('j', $timestamp);
+					$i = date('n', $timestamp) - 1;
+				?>
+					<h1><?=$day.' '.$month[$i].' | '.$gallery_title?></h1>
 		 			<hr noshade class='block_header' >
 		 			<div class='clear'></div>
 				<?php

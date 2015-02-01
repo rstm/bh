@@ -8,8 +8,8 @@ if ( empty($_SESSION['authorized'])
 
 
 $path = $_SERVER['DOCUMENT_ROOT'];
-$return_path = '/admin/gallery';
-$table_name = 'galleries';
+$return_path = '/admin/media.php';
+$table_name = 'media';
 
 include ($path.'/lib/db_connect.php');
 
@@ -51,27 +51,14 @@ if ($_POST['action']=='update') {
 }
 
 if ($_POST['action']=='new') {
-
-	$date=date("Y-m-d");
-	$time=date("H:i:s");
 	$sql="
-		INSERT INTO `news` 
-		(`title`, `pub_date`, `time`, `text`, 
-			`main`, `category_id`, `tournament`, `anons`) 
-		VALUES ('{$post['title']}', '{$date}', '{$time}', 
-			'{$post['text']}', 
-			{$post['main']}, {$post['category_id']}, {$post['tournament']},
-			'{$post['anons']}' )
+		INSERT INTO $table_name 
+		(`title`, `anons`, `url`) 
+		VALUES ('{$post['title']}','{$post['anons']}','{$post['url']}' )
 	";
 	//echo $sql;
 	$result=mysql_query($sql,Database::$mConnect);
-
-	if ($post['tournament'] == 1) {	
-		$last_id=mysql_insert_id(Database::$mConnect);
-		mkdir("$path/images/gallery/$last_id");
-	}
-
-	header("Location: /admin/news.php");
+	header("Location: $return_path");
 }
 
 ?>

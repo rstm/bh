@@ -15,7 +15,8 @@
 	{
 		//if ($s>=$min && $s<=$max)
 		//{
-		$anons = substr(strip_tags($row['text'], '<p>'), 0, 200).'...'; 
+		//$anons = substr(strip_tags($row['text'], '<p>'), 0, 200).'...'; 
+		$anons = $row['anons']; 
 		$last = '';
 		if ($s % 3 == 0) $last = 'last';
 		print "<div class='news $last' id='{$row['id']}''>";

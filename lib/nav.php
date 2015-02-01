@@ -3,13 +3,14 @@ $nav = array(
 		array( 'title' => 'О КЛУБЕ', 'url' => '/', 'active' => '',
 			'sub_menu' => array( 
 				array('title' => 'ХАРАКТЕРИСТИКИ', 'url' => '/#system_info'),
-				array('title' => 'ЦЕНЫ', 'url' => '/#prices')
+				array('title' => 'ЦЕНЫ', 'url' => '/#prices'),
+				array('title' => 'МЕДИА', 'url' => '/media.php')
 			)
 	 	),
-		array( 'title' => 'КАЛЕНДАРЬ', 'url' => '/calendar.php', 'active' => '',
+		array( 'title' => 'КАЛЕНДАРЬ', 'url' => '/calendar', 'active' => '',
 			'sub_menu' => array( 
-				array('title' => 'Прошедшее', 'url' => '#'),
-				array('title' => 'Будущее', 'url' => '#')
+				array('title' => 'Прошедшее', 'url' => '/calendar/past.php'),
+				array('title' => 'Будущее', 'url' => '/calendar/future.php')
 			)
 		),
 		array( 'title' => 'НОВОСТИ', 'url' => '/news/?category_id=2', 'active' => '',
@@ -21,8 +22,8 @@ $nav = array(
 		),
 		array( 'title' => 'КОМАНДА', 'url' => '#', 'active' => '',
 			'sub_menu' => array( 
-				array('title' => 'Battle Hall Staff', 'url' => '/calendar.php'),
-				array('title' => 'Battle Hall Киберспорт', 'url' => '/calendar.php')
+				array('title' => 'Battle Hall Staff', 'url' => '/team/stuff.php'),
+				array('title' => 'Battle Hall Киберспорт', 'url' => '#')
 			)
 		),
 		array( 'title' => 'КОНТАКТЫ', 'url' => '/contacts.php', 'active' => '', 

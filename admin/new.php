@@ -14,6 +14,10 @@ include 'header.php';
 </script>
 <form method="post" action="/app/models/news.php">
 	<p>Заголовок: <input type="text" name="title" /></p>
+	<p>Анонс: 
+	<textarea id='anons' name="anons" maxlength="99999" rows=3 cols=60 placeholder="Введите текст">
+	</textarea> 
+	</p>
 	<p>Текст: 
 	<textarea id='text' name="text" maxlength="99999" rows=10 cols=60 placeholder="Введите текст">
 	</textarea> 
