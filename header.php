@@ -7,6 +7,8 @@ include ($path.'/lib/functions.php');
 <head>
 <meta charset="utf-8">
 
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/favicon.ico" type= "image/x-icon">
 
 <link href="/fonts/bebasneue.css" rel="stylesheet" type="text/css"  /> 
 <link href="/fonts/bulletin.css" rel="stylesheet" type="text/css"  /> 

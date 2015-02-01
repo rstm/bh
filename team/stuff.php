@@ -22,8 +22,8 @@ include_once $path.'/header.php'; ?>
 					<div class='person second left'>
 						<img src='/images/team.png' />
 						<div class='info'>
-							<span>Алексей Морару</span>
-							<p>Администратор и еще нечто большее</p>
+							<span>Эльвира Валиуллина</span>
+							<p>Испольнительный директор</p>
 						</div>
 					</div>
 					<div class='person right'>
@@ -47,12 +47,19 @@ include_once $path.'/header.php'; ?>
 							<p>Администратор и еще нечто большее</p>
 						</div>
 					</div>
-					<div class='person second left'>
+					<div class='person left'>
 						<img src='/images/team.png' />
 						<div class='info'>
 							<span>Нияз Агафонов</span>
 							<p>Сopywriting / newsmaker
 и ещё нечто большее</p>
+						</div>
+					</div>
+					<div class='person right'>
+						<img src='/images/team.png' />
+						<div class='info'>
+							<span>Алексей Морару</span>
+							<p>Администратор и еще нечто большее</p>
 						</div>
 					</div>
 					<div class='clear'></div>

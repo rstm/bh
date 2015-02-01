@@ -34,5 +34,6 @@
 <script src="/js/jquery.slides.min.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/lightbox.js"></script>
+
 </body>
 </html>

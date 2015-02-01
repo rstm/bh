@@ -33,7 +33,7 @@ include_once 'header.php'; ?>
     <div>
 			<div class='image-message'>
 				<h2>BATTLE HALL</h2>
-				<p>Казань, муштари 2а, 8435800001, круглосуточно</p> 	  
+				<p>Казань, Муштари 2а, 8435800001, круглосуточно</p> 	  
 			</div>
     		<img src="/images/slide1.png" >  
     </div>
@@ -52,7 +52,7 @@ include_once 'header.php'; ?>
 					$result=mysql_query($sql,Database::$mConnect);
 					show('news/index.php',$result);
 				?>		
-				<span class='more'>Еще больше минералов</span>
+				<span class='more'>Нам нужно больше минералов</span>
 				<img class='loading' src='/images/loading.gif' />
 			</div>
 		</div>
@@ -96,23 +96,23 @@ include_once 'header.php'; ?>
 				<ul>
 					<li >
 						<span class='time'>Час игры</span>
-						<div class='price'>60.-</div>
+						<div class='price'>&nbsp;60.-</div>
 					</li>
 					<li>
 						<span class='time'>Час игры Vip зона
-						</span><div class='price'>70.-</div>
+						</span><div class='price'>&nbsp;70.-</div>
 					</li>
 					<li>
 						<span class='time'>Час аренда зала (12 ПК)
-						</span><div class='price'>800.-</div>
+						</span><div class='price'>&nbsp;800.-</div>
 					</li>
 					<li>
 						<span class='time'>Пакет ночь
-						</span><div class='price'>300.-</div>
+						</span><div class='price'>&nbsp;300.-</div>
 					</li>
 					<li>
 						<span class='time'>Пакет ночь Vip зона
-						</span><div class='price'>350.-</div>
+						</span><div class='price'>&nbsp;350.-</div>
 					</li>
 					<li>
 						<span class='time'>Пакет ночь Аренда зала

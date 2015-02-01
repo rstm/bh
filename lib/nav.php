@@ -23,7 +23,7 @@ $nav = array(
 		array( 'title' => 'КОМАНДА', 'url' => '#', 'active' => '',
 			'sub_menu' => array( 
 				array('title' => 'Battle Hall Staff', 'url' => '/team/stuff.php'),
-				array('title' => 'Battle Hall Киберспорт', 'url' => '#')
+				array('title' => 'Battle Hall Киберспорт', 'url' => '/team/cybersport.php')
 			)
 		),
 		array( 'title' => 'КОНТАКТЫ', 'url' => '/contacts.php', 'active' => '', 
