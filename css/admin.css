@@ -211,6 +211,7 @@ label { display: block; margin:5px; }
 	overflow: hidden;
 	display: inline-block;
 	//clear: none !important;
+	position: relative;
 }
 
 .last {
