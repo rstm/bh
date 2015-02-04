@@ -27,19 +27,28 @@ if(isset($_COOKIE['remember_token'])) {
 
 ?>
 <!DOCTYPE html>
+<html>
+<head>
+	<link href="/css/admin.css" rel="stylesheet" />
+</head>
+<body>
 
 
-
-<?php 
-if (isset($_GET['err'])) {
-	echo $_GET['err'];
-}
-?>
-<form method="post" action="/models/session.php">
-Введите ваши данные: <br>
-Имя пользователя: <input type="text" name="login" value=""><br>
-Пароль: <input type="password" name="password" value="">
-<br>
-<input type="submit" value="Войти">
-<input type="hidden" name='action' value="new">
-</form>	
+<div class='auth_form'>
+	<form method="post" action="/models/session.php">
+	<?php 
+	if (isset($_GET['err'])) {
+		echo '<p class="danger">'.$_GET['err'].'</p>';
+	}
+	?>
+	<p>Имя пользователя: </p>
+	<p><input type="text" name="login" value=""></p>
+	<p>Пароль:</p>
+	<p><input type="password" name="password" value="">
+	</p>
+	<p><input type="submit" value="Войти"></p>
+	<input type="hidden" name='action' value="new">
+	</form>	
+</div>
+</body>
+</html>
