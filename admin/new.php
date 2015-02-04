@@ -5,13 +5,16 @@ include 'header.php';
 <script>
 	tinymce.init({
 		selector:'textarea',
-	    plugins: "image jbimages",
-      toolbar: "bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent jbimages",
+	    plugins: "image jbimages link",
+      	toolbar: "link bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent jbimages",
 		menubar: false,
 	    height: 300,
-      relative_urls:false
+      	relative_urls:false,
+      	content_css : "/css/tiny_mce.css",
+      	theme_advanced_font_sizes: "10px,12px,13px,14px,16px,18px,20px",
 	});
 </script>
+<div class='container'>
 <form method="post" action="/app/models/news.php">
 	<p>Заголовок: <input type="text" name="title" /></p>
 	<p>Анонс: 
@@ -39,5 +42,6 @@ include 'header.php';
 	<label><input type='checkbox' name='tournament' value='1' />Турнир</label>
 	<input type="submit" value="Добавить">
 </form>
+</div>
 <?php include 'footer.php'; ?>
 

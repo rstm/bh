@@ -18,16 +18,45 @@ $row = $row=mysql_fetch_assoc($result);
       	theme_advanced_font_sizes: "10px,12px,13px,14px,16px,18px,20px",
 	});
 </script>
-
+<div class='container'>
 <?php
 
 
 print<<<here
 <form method="post" action="/app/models/news.php">
-	Заголовок: <input type="text" name="title" value="{$row['title']}"/><br>
-	<textarea name="text" rows=5 cols=40>{$row['text']}
-	</textarea>  <br>
+	<p>Заголовок: <input type="text" name="title" value="{$row['title']}" /></p>
+	<p>Анонс: 
+	<textarea id='anons' name="anons" maxlength="99999" rows=3 cols=60>
+	{$row['anons']}
+	</textarea> 
+	</p>
+	<p>Текст: 
+	<textarea id='text' name="text" maxlength="99999" rows=10 cols=60 >
+	{$row['text']}
+	</textarea> 
+
+
+	
 here;
+
+?>
+Категория: <select name="category_id">
+		<?php
+			$sql="select * from category_news";
+			$result=mysql_query($sql,Database::$mConnect);
+			while ($category=mysql_fetch_assoc($result)) {
+				if ($category['id'] == $row['category_id']) $selected = 'selected';
+				else $selected = '';
+				print "<option $selected value='{$category['id']}'>{$category['title']}</option>";
+			}
+		?>
+   	</select>
+
+<?
+
+//Заголовок: <input type="text" name="title" value="{$row['title']}"/><br>
+//	<textarea name="text" rows=5 cols=40>{$row['text']}
+//	</textarea>  <br>
 
 $checked = ($row['main'] == 1) ? 'checked' : '';
 $tournament = ($row['tournament'] == 1) ? 'checked' : '';
@@ -40,10 +69,11 @@ print<<<here
 <label><input $checked type='checkbox' name='main' value='1' /> На главной</label>
 
 <input type="hidden" name="tournament" value="0" />
-<label><input $tournament type='checkbox' name='tournament' value='1' /> На главной</label>
+<label><input $tournament type='checkbox' name='tournament' value='1' /> Турнир</label>
 
 <input type="submit" value="Обновить">
 </form>
+</div>
 here;
 	
 	include 'footer.php';

@@ -237,3 +237,11 @@ table tr:nth-child(2n){
 }
 
 
+.container ul li{
+	margin-bottom: 5px;
+
+}
+
+.container ul li a {
+	color: #077fcc;
+	}

@@ -39,11 +39,13 @@ if ($_POST['action']=='update') {
 	$sql="
 		update news	set
 		text = '{$post['text']}',
-		title = '{$post['$title']},
-		tournament = {$post['tournament']}
+		anons = '{$post['anons']}',
+		title = '{$post['title']}',
+		tournament = {$post['tournament']},
+		category_id = {$post['category_id']},
 		main = {$post['main']}
 		where 
-		id={$_POST['id']};
+		id = {$post['id']};
 	";
 	//echo $sql;
 	$result=mysql_query($sql,Database::$mConnect);

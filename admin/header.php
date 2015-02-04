@@ -19,13 +19,12 @@ check_login();
 			<ul class='left'>
 				<li><a href='/admin/news.php'>Новости</a></li>
 				<li><a href='/admin/gallery'>Галерея</a></li>
-				<li><a href='#'>Состав команды</a></li>
 				<li><a href='/admin/media.php'>Медиа</a></li>
 				<li><a href='/admin/team/'>Команда</a></li>
 				<li><a href='/admin/new.php'>Добавить новость/турнир</a></li>
 			</ul>
 			<ul class='right'>
-				<li><a href='#'>Сайт</a></li>
+				<li><a href='/'>Сайт</a></li>
 				<li><a href='/models/session.php?action=delete'>Выход</a></li>
 			</ul>
 		</nav>
