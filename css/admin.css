@@ -204,6 +204,7 @@ label { display: block; margin:5px; }
 	clear: none !important;
 	position: relative;
 }
+
 table {
 	border-collapse: collapse;
 }
@@ -214,3 +215,25 @@ table td {
 table tr:nth-child(2n){
 	background-color: rgb(237, 237, 237);
 }
+
+
+.calendar img {
+	max-width: 313px;
+}
+
+.calendar div.image {
+	width: 313px;
+	height: 176px;
+	float:left;
+	margin: 0 18px 18px 0;
+	overflow: hidden;
+	display: inline-block;
+	//clear: none !important;
+	position: relative;
+}
+
+.last {
+	margin-right: 0 !important;
+}
+
+
