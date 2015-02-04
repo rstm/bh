@@ -11,7 +11,7 @@ include_once $path.'/header.php';
 			 	<hr noshade class='block_header' > 
 			 	<div class='clear'></div>
 				<?php
-					$sql="select * from games";
+					$sql="select * from games where id!=3";
 					$result=mysql_query($sql,Database::$mConnect);
 					show('team/index.php',$result);
 				?>	

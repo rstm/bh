@@ -8,11 +8,15 @@ include_once $path.'/header.php'; ?>
 			<div>
 				<h1>BATTLE HALL STAFF</h1>
 			 	<hr noshade class='block_header' > 
-			
-				<div class='clear'></div>
-				
 				<div class='persons'>
-					<div class='person'>
+
+					<?php
+$sql = "select * from team where game_id = 3";
+$result = mysql_query($sql,Database::$mConnect);
+
+show('team/show.php',$result);
+?>
+					<!--div class='person'>
 						<img src='/images/team.png' />
 						<div class='info'>
 							<span>Эльвира Валиуллина</span>
@@ -67,5 +71,5 @@ include_once $path.'/header.php'; ?>
 				
 			</div>
 		</div>		
-	</section>
+	</section-->
 <?php include_once $path.'/footer.php'; ?>
