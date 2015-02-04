@@ -1,7 +1,7 @@
 <?php include '../header.php'; ?>
 
 <h1><span>Галереи</span></h1>
-<div class='container'>
+<div class='container calendar'>
 	<div class='actions'>
 		<form method="post" enctype="multipart/form-data" action="/app/models/photos.php">
    			<input type="file" name="userfile" multiple accept="image/*">

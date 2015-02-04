@@ -199,3 +199,21 @@ label { display: block; margin:5px; }
 	position: relative;
 }
 
+.calendar img {
+	max-width: 313px;
+}
+
+.calendar div.image {
+	width: 313px;
+	height: 176px;
+	float:left;
+	margin: 0 18px 18px 0;
+	overflow: hidden;
+	display: inline-block;
+	//clear: none !important;
+}
+
+.last {
+	margin-right: 0 !important;
+}
+
