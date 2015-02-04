@@ -21,21 +21,21 @@ include_once 'header.php'; ?>
 				<h2>BATTLE HALL</h2>
 				<p>Еженедельные киберспортивные соревнования</p>
 			</div>
-    		<img src="/images/slide2.png" >  
+    		<img src="/images/slide2.jpg" >  
     </div>
     <div>
 			<div class='image-message'>
 				<h2>BATTLE HALL</h2>
 				<p>Ежегодные Российские "Battle Hall Seasons"</p>
 			</div>
-    		<img src="/images/slide3.png" >  
+    		<img src="/images/slide3.jpg" >  
     </div>
     <div>
 			<div class='image-message'>
 				<h2>BATTLE HALL</h2>
 				<p>Казань, Муштари 2а, 8435800001, круглосуточно</p> 	  
 			</div>
-    		<img src="/images/slide4.png" >  
+    		<img src="/images/slide4.jpg" >  
     </div>
   </div>
 </div>
