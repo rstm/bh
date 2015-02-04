@@ -21,6 +21,7 @@ check_login();
 				<li><a href='/admin/gallery'>Галерея</a></li>
 				<li><a href='#'>Состав команды</a></li>
 				<li><a href='/admin/media.php'>Медиа</a></li>
+				<li><a href='/admin/team/'>Команда</a></li>
 				<li><a href='/admin/new.php'>Добавить новость/турнир</a></li>
 			</ul>
 			<ul class='right'>

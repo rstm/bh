@@ -5,6 +5,10 @@ body {
 	font-family: "PT Sans",verdana,sans-serif;
 }
 
+ul {
+	list-style-type: none;
+}
+
 input, textarea { outline:none; }
 input:active, textarea:active { outline:none; }
 :focus { outline:none; } 
@@ -122,6 +126,8 @@ input:focus {
 	background-color: rgb(220, 220, 220);
 	border: 1px solid lightgrey;
 }
+.danger { color: #BE6C6C; }
+.green { color: rgb(9, 158, 9); }
 .container .small_action { 
 	display:inline; background-color: white;
 	border:none;
@@ -198,4 +204,13 @@ label { display: block; margin:5px; }
 	clear: none !important;
 	position: relative;
 }
-
+table {
+	border-collapse: collapse;
+}
+table td {
+	border: 1px solid #d4d4d4;
+	padding: 5px;
+}
+table tr:nth-child(2n){
+	background-color: rgb(237, 237, 237);
+}
