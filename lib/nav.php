@@ -2,9 +2,9 @@
 $nav = array(
 		array( 'title' => 'О КЛУБЕ', 'url' => '/', 'active' => '',
 			'sub_menu' => array( 
-				array('title' => 'ХАРАКТЕРИСТИКИ', 'url' => '/system_info.php'),
-				array('title' => 'ЦЕНЫ', 'url' => '/prices.php'),
-				array('title' => 'МЕДИА', 'url' => '/media.php')
+				array('title' => 'Характеристики', 'url' => '/system_info.php'),
+				array('title' => 'Цены', 'url' => '/prices.php'),
+				array('title' => 'Медиа', 'url' => '/media.php')
 			)
 	 	),
 		array( 'title' => 'КАЛЕНДАРЬ', 'url' => '/calendar', 'active' => '',
