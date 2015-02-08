@@ -33,8 +33,13 @@ function check_login() {
 	}
 }
 
-function show( $method,$result ) {
+function show($method, $result) {
 	global $path; 
+	include $path.'/app/views/'.$method;
+}
+
+function show_v2($method, $data) {
+	global $path;
 	include $path.'/app/views/'.$method;
 }
 
@@ -50,144 +55,62 @@ function rudate($format, $timestamp = 0, $nominative_month = false)
 	 if(!$timestamp) $timestamp = time();
 	 elseif(!preg_match("/^[0-9]+$/", $timestamp)) $timestamp = strtotime($timestamp);
 	 
-	 $F = $nominative_month ? array(1=>"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь") : array(1=>"Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря");
-	 $M = array(1=>"Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек");
-	 $l = array("Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота");
-	 $D = array("Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб");
-	 
-	 $format = str_replace("F", $F[date("n", $timestamp)], $format);
-	 $format = str_replace("M", $M[date("n", $timestamp)], $format);
-	 $format = str_replace("l", $l[date("w", $timestamp)], $format);
-	 $format = str_replace("D", $D[date("w", $timestamp)], $format);
+		$F = $nominative_month ? array(1=>"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь") : array(1=>"Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря");
+		$M = array(1=>"Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек");
+		$l = array("Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота");
+		$D = array("Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб");
+
+		$format = str_replace("F", $F[date("n", $timestamp)], $format);
+		$format = str_replace("M", $M[date("n", $timestamp)], $format);
+		$format = str_replace("l", $l[date("w", $timestamp)], $format);
+		$format = str_replace("D", $D[date("w", $timestamp)], $format);
 	 
 	 return date($format, $timestamp);
 }
 
-function show_news($admin) {
-	$sql="select * from news ORDER BY pub_date DESC, time DESC ";
-	$result=mysql_query($sql,Database::$mConnect);
-
-		$s=1;
-		$p=0;
-		if(isset($_GET['min'])) $min=$_GET['min'];
-		else $min=1;
-		$max=$min+4;
-
-
-		//echo $min; echo $max;
-		while ($row=mysql_fetch_array($result))
-		{
-			if ($s>=$min && $s<=$max)
-			{
-			print "<div class='news'>";
-			
-			
-			 echo $row[3]; print "<br><br>";
-			 echo $row[1].' '.$row[2]; //print " +3 GMT";
-			 if ($admin==1) {
-			  	print "			  
-				  	<form method='post' action='update.php'>
-				 		<input type='hidden' value='{$row[0]}' name='id'/>
-				 		<input type='hidden' value='$row[3]' name='news'/>
-				 		<input class='small_action' type='submit' value='Редактировать'/>
-				 	</form>
-
-				 	<form method='post' action='action/action.php'>
-				 		<input type='hidden' value='{$row[0]}' name='id'/>
-				 		<input type='hidden' value='delete' name='action'/>
-				 		<input class='small_action' type='submit' value='Удалить'/>
-				 	</form>
-					</div>
-				";
-		}
-		
+function post_escape($input) {
+	foreach ($input as $key => $value) {
+		if (is_array($value)) {
+			foreach ($value as $sub_key => $sub_value) {
+				$result[$key][$sub_key] = mysql_real_escape_string($sub_value);
 			}
-		
-			$s++;			
-		}	
-		
-	
-
-	
-		print "<br>  <div  id=\"numpage\">Cтраницы: ";
-		
-		for($k=0;$k<($s-1)/5;$k++)
-		{
-			$r=$k*5+1; $t=$k+1;
-			$link='<a href="?&min='.$r.'">'.$t.'</a>';
-			echo $link; 
-			print "  ";
 		}
+		else $result[$key] = mysql_real_escape_string($value);
+	}
+	return $result;
 }
 
-
-
-function add_news($news) {
-			$date=date("Y-m-d");
-			$time=date("H:i:s");
-			$sql="
-			INSERT INTO `news` 
-			( `pub_date`, `time`, `text`) 
-			VALUES ('{$date}', '{$time}', '{$news}');
-				";
-		//echo $sql;
-			$result=mysql_query($sql,Database::$mConnect);
-				 
-			print "<h4>Новость успешно добавлена</h4>";
-
+function rrmdir($dir) {
+	foreach(glob($dir . '/*') as $file) {
+		if (is_dir($file)) rrmdir($file);
+		else unlink($file);
+	}
+	rmdir($dir);
 }
 
-function delete_news() {
-	
-}
-
-function add_photo() {
-	if(!empty($_POST['photo'])) { 
-	  
-		$uploaddir = $_POST['razdel'];
-		$uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
-		
-		if($_FILES['userfile']['size'] != 0 and $_FILES['userfile']['size']<=10024000) 
-		{ // Здесь мы проверяем размер если он более 1 МБ
-			 if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) 
-			 { // Здесь идет процесс загрузки изображения
-				 $size = getimagesize($uploadfile); // с помощью этой функции мы можем получить размер пикселей изображения
-
-				if ($size[0] < 800 && $size[1]<800) 
-				{ 
-					 echo "<h4>Фотография загружена.</h4>";
-				}
-				else 
-				{
-				echo "<h4>Размер пикселей превышает допустимые нормы (ширина не более - 800 пикселей, высота не более 800)</h4>"; 
-					 unlink($uploadfile); 
-				}
-			  
-				} 
-				else {
-				 	echo "<h4>Файл не загружен, попробуйте еще раз.</h4>";
-				}
-		 	}
-		 	else 
-			{ echo "Размер файла не должен превышать 1000Кб";}
-	} 
-
-}
-
-
-function show_galleries($admin) {
-	$sql="select * from galleries";
+function create($data,$table_name) {
+	$keys = implode(",", array_keys($data));
+	$values = implode("', '", $data);
+	$sql = "
+		INSERT INTO $table_name 
+		($keys) VALUES ('$values');		
+	";
 	$result=mysql_query($sql,Database::$mConnect);
-
-		
 }
 
-
-function show_photos($id,$admin) {
-	$sql="select * from photos where id_gallery = $id";
+function update($data,$id,$table_name) {
+	$convert = implode(", ", array_map(function ($v, $k) { return $k." = '".$v."'"; }, $data, array_keys($data)));
+	$sql = "
+		UPDATE $table_name SET
+		$convert
+		WHERE id = $id;		
+	";
 	$result=mysql_query($sql,Database::$mConnect);
+}
 
-		
+function delete($id,$table_name) {
+	$sql = "DELETE FROM $table_name WHERE id = $id";
+	$result=mysql_query($sql,Database::$mConnect);
 }
 
 ?>

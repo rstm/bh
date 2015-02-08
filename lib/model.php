@@ -1,25 +1,49 @@
-<?php
+<?
 session_start();
 if ( empty($_SESSION['authorized'])
 	|| $_SESSION['ip'] != $_SERVER['REMOTE_ADDR'] ) {
 	die("Доступ закрыт."); 
 } 
 
-
-
 $path = $_SERVER['DOCUMENT_ROOT'];
-$return_path = '/admin/team/show.php';
-$table_name = 'team';
 
-include ($path.'/lib/functions.php');
+include_once 'db2_connect.php'; 
+
+class model {
+
+	function new() {
+
+	}
+}
+
+?>
+
+<?php
 
 
 
 
-$post = post_escape($_POST);
+
+
+include ($path.'/lib/db_connect.php');
+
+
+function rrmdir($dir) {
+	foreach(glob($dir . '/*') as $file) {
+		if (is_dir($file)) rrmdir($file);
+		else unlink($file);
+	}
+	rmdir($dir);
+}
+
+foreach ($_POST as $key => $value) {
+	$post[$key] = mysql_real_escape_string($value);
+}
 
 if ($_POST['action']=='delete') {
-	delete($post['id'], $table_name);
+	$sql="delete from $table_name where id={$post['id']}";
+	//echo $sql;
+	$result=mysql_query($sql,Database::$mConnect); 
 	header("Location: $return_path?id={$post['game_id']}");
 }	
 

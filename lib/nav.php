@@ -2,8 +2,8 @@
 $nav = array(
 		array( 'title' => 'О КЛУБЕ', 'url' => '/', 'active' => '',
 			'sub_menu' => array( 
-				array('title' => 'ХАРАКТЕРИСТИКИ', 'url' => '/#system_info'),
-				array('title' => 'ЦЕНЫ', 'url' => '/#prices'),
+				array('title' => 'ХАРАКТЕРИСТИКИ', 'url' => '/system_info.php'),
+				array('title' => 'ЦЕНЫ', 'url' => '/prices.php'),
 				array('title' => 'МЕДИА', 'url' => '/media.php')
 			)
 	 	),
