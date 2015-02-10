@@ -6,14 +6,10 @@ include_once $path.'/header.php';
 
 $sql="select * from streams where type = 0";
 $data['live']=mysql_query($sql,Database::$mConnect);
-
-show_v2('streams/live.php',$data);
-
 $sql="select * from streams where type = 1";
-$data['live'] = '';
 $data['old']=mysql_query($sql,Database::$mConnect);
 
-show_v2('streams/old.php',$data);
+show_v2('streams/index.php',$data);
 				
 include_once $path.'/footer.php'; 
 ?>
