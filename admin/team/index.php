@@ -7,7 +7,7 @@ include_once $path.'/admin/header.php';
 <?php
 	$sql="select * from games";
 	$result=mysql_query($sql,Database::$mConnect);
-	show('team/index.php',$result);	
+	show('admin/team/index.php',$result);	
 ?>
 </div>
 <? include_once  $path.'/admin/footer.php'; ?>

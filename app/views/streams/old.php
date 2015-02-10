@@ -1,26 +1,14 @@
 <section>
-	<div class='block media'>
+	<div class='block media streams'>
 		<div>
-			<?php
-			$s=1;
-			$row=mysql_fetch_array($result);
-			?>
-			<h1>МЕДИА</h1>
+			<h1>OLD</h1>
 			<hr noshade class='block_header' > 
-
 			<div class='clear'></div>
 
-			<div class='video first'>
-				<div class='url'><?=$row['url']?></div>
-					 
-				<div class='info'>
-					<span><?=$row['title']?></span>
-					<hr>
-					<div class='anons'><?=$row['anons']?></div>
-				</div>
-			</div>
 			<? 
-				while ($row = mysql_fetch_array($result)) {	
+			if (mysql_num_rows($data['old']) != 0) {
+				$s = 1;
+				while ($row = mysql_fetch_array($data['old'])) {	
 					if ($s % 4 == 0) $position = 'last'; 
 					else $position = '';
 			?>
@@ -34,7 +22,10 @@
 						</div>
 					</div>
 				
-			<? $s++; } ?>
+			<? $s++; } 
+				} else { ?>
+				<p>К сожалению, тут пока ничего нет.</p>
+			<? } ?>
 
 			<div id='dark'></div>
 		</div>

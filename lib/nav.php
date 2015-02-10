@@ -33,11 +33,10 @@ $nav = array(
 				array('title' => 'Как добраться', 'url' => '/contacts.php#look_map')
 			)
 		),
-		array( 'title' => 'СТРИМЫ', 'url' => '#', 'active' => '',
+		array( 'title' => 'СТРИМЫ', 'url' => '/streams', 'active' => '',
 			'sub_menu' => array( 
-				array('title' => 'CS:GO', 'url' => '#'),
-				array('title' => 'Dota 2', 'url' => '#'),
-				array('title' => '101', 'url' => '#')
+				array('title' => 'Live', 'url' => '/streams/live.php'),
+				array('title' => 'Воды', 'url' => '/streams/old.php')
 			)
 		)
 	);

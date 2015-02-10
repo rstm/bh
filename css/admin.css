@@ -39,7 +39,7 @@ header ul li {
 	height: 23px;
 	padding-top: 7px;
 }
-header ul li a {
+header ul li a, header ul li span {
 //	color: rgb(213, 213, 213);
 	//color: #077fcc;
 	color: #cdcdcd;
@@ -57,7 +57,7 @@ header ul li a:hover {
 	//color: #055486;
 	color: #fff;
 }
-header ul li:last-child {
+header ul li.block_begin {
 	border-left: 1px solid lightgrey;
 	height: 21px;
 	margin-top: 6px;

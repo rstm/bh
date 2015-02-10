@@ -18,17 +18,14 @@ include_once $path.'/header.php';
 
 					$sql="select * from news where category_id=$category_id ORDER BY pub_date DESC, time DESC ";
 					$data['result'] = mysql_query($sql, Database::$mConnect);
+					
+					show_v2('news/index.php', $data);
 					if (mysql_num_rows($data['result']) != 0) {
-						show_v2('news/index.php', $data);
 						print "
 							<span class='more'>Еще новости</span>
 							<img class='loading' src='/images/loading.gif' />
 						";
-					} else print "<span class='error'>К сожалению, тут новостей пока нет =(</span>";
-
-					/*if (mysql_num_rows($data['result'])!=0) { 
-						
-					}				*/	
+					}	
 				?>						
 				
 			</div>

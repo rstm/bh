@@ -312,12 +312,13 @@ section hr.block_header::after {
 	line-height: 0.9;
 }
 .news a {
-	float:right;
-	width:215px;
-	margin: 0;	
-	font-size: 19px;
-	padding-top: 5px;
+	float: right;
+	width: 217px;
+	margin: 0;
+	font-size: 18px;
+	padding-top: 3px;
 	color: black;
+	//font-family: 'tahoma';
 }
 .news a:hover {
 	color: rgb(4, 141, 201);
@@ -669,7 +670,7 @@ clearfix::after {
 .show_news h2 { 
 	margin: 12px 0;
 	font-weight: normal;
-	font-size: 27px; 
+	font-size: 29px; 
 }
 .show_news .date {
 	font-size: 14px;
@@ -769,6 +770,78 @@ clearfix::after {
 	margin: 0 18px 20px 0;
 	font-family: 'bebas_neuebold';
 }
+
+
+.list_video {
+	width: 223px;
+	float:left;
+	margin: 0 28px 20px 0;
+	font-family: 'bebas_neuebold';
+}
+
+.list_video .url_video {
+	width: 223px;
+	height: 125px;
+	overflow: hidden;
+}
+.list_video .url_video iframe, .list_video .url_video object {
+	width: 223px;
+	height: 125px;
+}
+
+.list_video div.date {
+	text-align: center;
+	float: left;
+	display: block;
+	height: 52px;
+	width: 45px;
+	background-color: rgb(4,141,235);
+	color:white;	
+	font-size: 13px;	
+	margin-bottom: 10px;
+	padding-top: 8px;
+}
+.list_video div.date span {
+	font-size: 34px;
+	display: block;
+	line-height: 0.9;
+}
+.list_video span {
+	width: 217px;
+	margin: 0;
+	font-size: 18px;
+	padding-top: 3px;
+	color: black;
+	//font-family: 'tahoma';
+	cursor: pointer;
+}
+.list_video span:hover {
+	color: rgb(4, 141, 201);
+}
+.list_video hr {
+	clear:both;
+	margin-top: 10px;
+	width: 100%;
+	border: 0;
+	height: 2px;
+	background-color: rgb(174,174,174);
+}
+.list_video .anons_video {
+	padding: 14px 20px;
+	background-color: rgb(226,232,244);
+	margin-top: -4px;
+	border-bottom: 9px solid #048deb;
+}
+.list_video .anons {
+	font-family: 'verdana';
+	font-size: 15px;
+	height: 100px;
+	margin-bottom: 8px;
+}
+.list_video .anons p {
+	margin:5px 0;
+}
+
 .last {
 	margin-right: 0 !important;
 }
@@ -858,12 +931,40 @@ clearfix::after {
 	float: right;
 }
 
-.games li a{
+.game {
+	width: 470px;
+}
+
+.game:first-child {
+	float:left;
+}
+
+.game:last-child {
+	float:right;
+}
+
+
+.game img {	
+	width: 100%;
+	height: 260px;
+	display: block;
+	margin-bottom: 25px;
+}
+
+.games a.link{
+	float: left;
 	color: rgb(79,153,221);
+	margin: -14px 10px 30px 0;
 	font-family: robotoregular;
 	font-size: 22px;
 	font-weight: 100;
-	margin: 10px;
+}
+
+.games hr {
+	margin: 0;
+	border: 0;
+	height: 3px;
+	background-color: rgb(204,204,204);
 }
 
 
@@ -896,4 +997,52 @@ clearfix::after {
 
 .one_news a:hover {
 	color: rgb(4, 141, 201);
+}
+
+.zoom {
+	width: 75% !important;
+	height: 70% !important;
+	position: fixed !important;;
+	left: 50% !important;;
+	margin: 0px 0px 0px -37.5% !important;;
+	top: 10% !important;
+	z-index: 99;
+	text-align: center;
+	overflow: visible !important;
+}
+
+.zoom iframe, .zoom object {
+	width: 75% !important;
+	height: 70% !important;
+	position: fixed !important;;
+	left: 50% !important;;
+	margin: 0px 0px 0px -37.5% !important;;
+	top: 10% !important;
+	z-index: 99;
+	padding: 5px;
+	background-color: rgb(110, 110, 110);
+}
+
+#dark {
+  background: #000;
+  height: 100%;
+  opacity: 0.7;
+  position: fixed;
+  width: 100%;
+  z-index: 60;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.zoom_out {
+	z-index: 99;
+	margin: -33px -11px 0 0 !important;
+	width: 28px !important;
+	padding: 5px 0;
+	font-size: 27px !important;
+	display: block;
+	background: url('/images/close.png') no-repeat;
+	height: 27px;
+	float: right;
 }
