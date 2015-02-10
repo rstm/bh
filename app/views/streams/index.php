@@ -32,7 +32,7 @@
 			<div class='clear'></div>
 
 			<? 
-			if (mysql_num_rows($data['live']) != 0) {
+			if (mysql_num_rows($data['old']) != 0) {
 				$s = 1;
 				while ($row = mysql_fetch_array($data['old'])) {	
 					if ($s % 4 == 0) $position = 'last'; 
