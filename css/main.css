@@ -755,7 +755,7 @@ clearfix::after {
 	float:left;
 	margin: 0 0 0 37px;
 	width: 288px;
-	height: 264px;
+	height: 268px;
 }
 
 .media .first .url iframe {
@@ -830,7 +830,8 @@ clearfix::after {
 	padding: 14px 20px;
 	background-color: rgb(226,232,244);
 	margin-top: -4px;
-	border-bottom: 9px solid #048deb;
+	border-bottom: 5px solid #048deb;
+	height: 107px;
 }
 .list_video .anons {
 	font-family: 'verdana';
@@ -853,7 +854,7 @@ clearfix::after {
 	padding: 10px 20px;
 	background-color: rgb(226,232,244);
 	margin-top: -4px;
-	border-bottom: 9px solid #048deb;
+	border-bottom: 5px solid #048deb;
 }
 .video .anons {
 	font-family: 'verdana';
