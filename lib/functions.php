@@ -95,7 +95,7 @@ function create($data,$table_name) {
 		INSERT INTO $table_name 
 		($keys) VALUES ('$values');		
 	";
-	$result=mysql_query($sql,Database::$mConnect);
+	$result=mysql_query($sql,Database::$mConnect) or die(mysql_error());
 }
 
 function update($data,$id,$table_name) {
@@ -105,12 +105,12 @@ function update($data,$id,$table_name) {
 		$convert
 		WHERE id = $id;		
 	";
-	$result=mysql_query($sql,Database::$mConnect);
+	$result=mysql_query($sql,Database::$mConnect) or die(mysql_error());
 }
 
 function delete($id,$table_name) {
 	$sql = "DELETE FROM $table_name WHERE id = $id";
-	$result=mysql_query($sql,Database::$mConnect);
+	$result = mysql_query($sql,Database::$mConnect) or die(mysql_error());
 }
 
 ?>

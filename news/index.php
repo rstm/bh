@@ -20,12 +20,6 @@ include_once $path.'/header.php';
 					$data['result'] = mysql_query($sql, Database::$mConnect);
 					
 					show_v2('news/index.php', $data);
-					if (mysql_num_rows($data['result']) != 0) {
-						print "
-							<span class='more'>Еще новости</span>
-							<img class='loading' src='/images/loading.gif' />
-						";
-					}	
 				?>						
 				
 			</div>

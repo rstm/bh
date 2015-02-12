@@ -5,28 +5,28 @@ include 'header.php';
 <script>
 	tinymce.init({
 		selector:'textarea',
-	    plugins: "image jbimages link",
-      	toolbar: "link bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent jbimages",
+    plugins: "image jbimages link",
+  	toolbar: "link bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent jbimages",
 		menubar: false,
-	    height: 300,
-      	relative_urls:false,
-      	content_css : "/css/tiny_mce.css",
-      	theme_advanced_font_sizes: "10px,12px,13px,14px,16px,18px,20px",
+    height: 300,
+  	relative_urls:false,
+  	content_css : "/css/tiny_mce.css",
+  	theme_advanced_font_sizes: "10px,12px,13px,14px,16px,18px,20px"
 	});
 </script>
 <div class='container'>
 <form method="post" action="/app/models/news.php">
-	<p>Заголовок: <input type="text" name="title" /></p>
+	<p>Заголовок: <input type="text" name="data[title]" /></p>
 	<p>Анонс: 
-	<textarea id='anons' name="anons" maxlength="99999" rows=3 cols=60 placeholder="Введите текст">
+	<textarea id='anons' name="data[anons]" maxlength="99999" rows=3 cols=60 placeholder="Введите текст">
 	</textarea> 
 	</p>
 	<p>Текст: 
-	<textarea id='text' name="text" maxlength="99999" rows=10 cols=60 placeholder="Введите текст">
+	<textarea id='text' name="data[text]" maxlength="99999" rows=10 cols=60 placeholder="Введите текст">
 	</textarea> 
 	</p> 
 	<input type="hidden" name="action" value="new" />
-	Категория: <select name="category_id">
+	Категория: <select name="data[category_id]">
 		<?php
 			$sql="select * from category_news";
 			$result=mysql_query($sql,Database::$mConnect);
@@ -36,10 +36,16 @@ include 'header.php';
 		?>
    	</select>
    	
-	<input type="hidden" name="main" value="0" />
-	<label><input type='checkbox' name='main' value='1' />На главной</label>
-	<input type="hidden" name="tournament" value="0" />
-	<label><input type='checkbox' name='tournament' value='1' />Турнир</label>
+	<p>
+		<input type="hidden" name="data[main]" value="0" />
+		<label><input type='checkbox' name='data[main]' value='1' />На главной</label>
+	</p>	
+	<p>
+		<input type="hidden" name="data[tournament]" value="0" />
+		<label><input id='tournament_check' type='checkbox' name='data[tournament]' value='1' />Событие</label>
+		&emsp;
+		<span id='tournament_date' >Дата проведения события:	<input type='date' name='data[tournament_date]' /></span>
+	</p>
 	<input type="submit" value="Добавить">
 </form>
 </div>

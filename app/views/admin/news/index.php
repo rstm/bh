@@ -13,7 +13,7 @@
 
 		if ($row['main']) $main = 'На главной '; 
 		else $main = '';
-		if ($row['tournament']) $tournament = 'Турнир ';
+		if ($row['tournament']) $tournament = 'Событие';
 		else $tournament = '';
 	?>
 		
@@ -25,6 +25,7 @@
 			 	<td>
 				 	<form method='post' action='/app/models/news.php'>
 				 		<input type='hidden' value='<?=$row['id']?>' name='id'/>
+				 		<input type='hidden' value='<?=$row['tournament']?>' name='tournament'/>
 				 		<input type='hidden' value='delete' name='action'/>
 				 		<input class='small_action' type='submit' value='Удалить'/>
 				 	</form>	

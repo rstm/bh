@@ -24,14 +24,14 @@ $row = $row=mysql_fetch_assoc($result);
 
 print<<<here
 <form method="post" action="/app/models/news.php">
-	<p>Заголовок: <input type="text" name="title" value="{$row['title']}" /></p>
+	<p>Заголовок: <input type="text" name="data[title]" value="{$row['title']}" /></p>
 	<p>Анонс: 
-	<textarea id='anons' name="anons" maxlength="99999" rows=3 cols=60>
+	<textarea id='anons' name="data[anons]" maxlength="99999" rows=3 cols=60>
 	{$row['anons']}
 	</textarea> 
 	</p>
 	<p>Текст: 
-	<textarea id='text' name="text" maxlength="99999" rows=10 cols=60 >
+	<textarea id='text' name="data[text]" maxlength="99999" rows=10 cols=60 >
 	{$row['text']}
 	</textarea> 
 
@@ -40,42 +40,40 @@ print<<<here
 here;
 
 ?>
-Категория: <select name="category_id">
-		<?php
-			$sql="select * from category_news";
-			$result=mysql_query($sql,Database::$mConnect);
-			while ($category=mysql_fetch_assoc($result)) {
-				if ($category['id'] == $row['category_id']) $selected = 'selected';
-				else $selected = '';
-				print "<option $selected value='{$category['id']}'>{$category['title']}</option>";
-			}
-		?>
-   	</select>
-
+<p>
+	Категория: <select name="data[category_id]">
+	<?
+		$sql="select * from category_news";
+		$result=mysql_query($sql,Database::$mConnect);
+		while ($category=mysql_fetch_assoc($result)) {
+			if ($category['id'] == $row['category_id']) $selected = 'selected';
+			else $selected = '';
+			print "<option $selected value='{$category['id']}'>{$category['title']}</option>";
+		}
+	?>
+ 	</select>
+</p>
 <?
 
-//Заголовок: <input type="text" name="title" value="{$row['title']}"/><br>
-//	<textarea name="text" rows=5 cols=40>{$row['text']}
-//	</textarea>  <br>
 
 $checked = ($row['main'] == 1) ? 'checked' : '';
 $tournament = ($row['tournament'] == 1) ? 'checked' : '';
+?>
 
-print<<<here
-<input type="hidden" name="id" value="{$row['id']}">
+<input type="hidden" name="id" value="<?=$row['id']?>">
 <input type="hidden" name="action" value="update">
 
-<input type="hidden" name="main" value="0" />
-<label><input $checked type='checkbox' name='main' value='1' /> На главной</label>
-
-<input type="hidden" name="tournament" value="0" />
-<label><input $tournament type='checkbox' name='tournament' value='1' /> Турнир</label>
-
+<p>
+<input type="hidden" name="data[main]" value="0" />
+<label><input <?=$checked?> type='checkbox' name='data[main]' value='1' /> На главной</label>
+</p>
 <input type="submit" value="Обновить">
 </form>
 </div>
-here;
-	
+
+<? if ($row['tournament'] == 1) { ?>
+	Дата проведения события:	<input type='date' name='data[tournament_date]' value='<?=$row['tournament_date']?>'/>
+<? } 	
 	include 'footer.php';
 ?>
 

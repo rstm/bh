@@ -32,6 +32,6 @@ $s=1;
 			$s++;			
 		}	
 			
-		//echo '</div>';
+			if (sign_in()) { echo "<div style='clear:both;'></div>"; }
 
 		?>
