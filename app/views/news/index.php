@@ -13,8 +13,8 @@
 					$anons = strip_tags($row['anons'], '<p>'); 
 					//$anons = $row['anons']; 
 					$position = '';
-					if ($s % 3 == 0) $position = 'last';
-					if ($s == 1 || $s % 4 == 0 ) $position = 'first';
+					if (($s - 1) % 3 == 0) $position = 'first';
+					//if ($s == 1 || $s % 4 == 0 ) $position = 'first';
 					
 					$timestamp = strtotime( $row['pub_date']);
 					$month = array("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
