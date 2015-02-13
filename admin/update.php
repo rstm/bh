@@ -67,13 +67,13 @@ $tournament = ($row['tournament'] == 1) ? 'checked' : '';
 <input type="hidden" name="data[main]" value="0" />
 <label><input <?=$checked?> type='checkbox' name='data[main]' value='1' /> На главной</label>
 </p>
+
+<p>
+	Дата:	<input type='date' name='data[tournament_date]' value='<?=$row['tournament_date']?>'/>
+</p>
 <input type="submit" value="Обновить">
 </form>
 </div>
 
-<? if ($row['tournament'] == 1) { ?>
-	Дата проведения события:	<input type='date' name='data[tournament_date]' value='<?=$row['tournament_date']?>'/>
-<? } 	
-	include 'footer.php';
-?>
+<? include 'footer.php'; ?>
 

@@ -6,7 +6,7 @@ include ($path.'/lib/functions.php');
 <html>
 <head>
 <meta charset="utf-8">
-
+<title>Battle Hall</title>
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="/favicon.ico" type= "image/x-icon">
 

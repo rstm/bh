@@ -27,15 +27,15 @@ include_once $path.'/header.php'; ?>
 						 	<hr noshade class='block_header' >
 						 	<a href='/news/show.php?id={$tournament['id']}' class='title'>{$tournament['title']}</a>
 						 	<div class='anons'>{$tournament['anons']}</div>
-						 	<div class='photos'> 
+						 	<!--div class='photos'--> 
 						";
-						$sql = "select * from photos 
+						/*$sql = "select * from photos 
 								where gallery_id = {$tournament['id']} LIMIT 5";
 						$result2 = mysql_query($sql,Database::$mConnect);
 						show('photos/index.php',$result2);
 						if(mysql_num_rows($result2) == 5 )
 							print "<a href='/gallery.php?id={$tournament['id']}'><div class='last more_images'>Еще фотографии</div></a>";
-						print "</div>";
+						print "</div>";*/
 					}
 					
 				?>				

@@ -16,10 +16,10 @@
 					if (($s - 1) % 3 == 0) $position = 'first';
 					//if ($s == 1 || $s % 4 == 0 ) $position = 'first';
 					
-					$timestamp = strtotime( $row['pub_date']);
+					$timestamp = strtotime( $row['tournament_date']);
 					$month = array("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
 					$day = date('j', $timestamp);
-					$i = date('n', $timestamp);
+					$i = date('n', $timestamp) - 1;
 					$year = date('o', $timestamp);
 				?>
 				<div class='one_news <?=$position?>' id='<?=$row['id']?>'>

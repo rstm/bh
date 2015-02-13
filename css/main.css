@@ -601,6 +601,7 @@ footer .address {
 .calendar .anons {
 	font-family: 'verdana';
 	font-size: 15px;
+	margin-top: 7px;
 }
 .calendar .anons p {
 	margin: 7px 0;

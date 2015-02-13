@@ -43,9 +43,8 @@ include 'header.php';
 	<p>
 		<input type="hidden" name="data[tournament]" value="0" />
 		<label><input id='tournament_check' type='checkbox' name='data[tournament]' value='1' />Событие</label>
-		&emsp;
-		<span id='tournament_date' >Дата проведения события:	<input type='date' name='data[tournament_date]' /></span>
 	</p>
+	<p>Дата:	<input type='date' name='data[tournament_date]' /></p>
 	<input type="submit" value="Добавить">
 </form>
 </div>

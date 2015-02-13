@@ -5,10 +5,10 @@
 		$anons = strip_tags($row['anons'], '<p>'); 
 		//$anons = $row['anons']; 
 		$last = '';
-		$timestamp = strtotime( $row['pub_date']);
+		$timestamp = strtotime( $row['tournament_date']);
 		$month = array("Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек");
 		$day = date('d', $timestamp);
-		$i = date('n', $timestamp);
+		$i = date('n', $timestamp) - 1;
 		$year = date('y', $timestamp);
 
 		if ($row['main']) $main = 'На главной '; 
