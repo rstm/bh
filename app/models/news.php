@@ -26,7 +26,10 @@ if ($_POST['action']=='delete') {
 	header("Location: $return_path");
 }	
 
-if ($_POST['action']=='update') {	
+if ($_POST['action']=='update') {
+	if($post['data']['tournament_date'] == '') {
+	    unset($post['data']['tournament_date']);
+	}	
 	update($post['data'], $post['id'], $table_name);
 	header("Location: $return_path");
 }

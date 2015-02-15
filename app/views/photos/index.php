@@ -1,3 +1,4 @@
+
 <?php
 $s=1;
 		$p=0;
@@ -18,16 +19,6 @@ $s=1;
 					 		<img src='/images/gallery/{$row['gallery_id']}/{$row['id']}.png' />
 					 	</a>
 			 	";
-			 	if (sign_in()) {
-				  	print "		
-					 	<form class='delete_image' method='post' action='/app/models/photos.php'>
-					 		<input type='hidden' value='{$row['id']}' name='id'/>
-					 		<input type='hidden' name='gallery_id' value='{$row['gallery_id']}' />
-					 		<input type='hidden' value='delete' name='action'/>
-					 		<input class='small_action' type='submit' value='Удалить'/>
-					 	</form>
-					";
-				}		
 				print '</div>';	
 			$s++;			
 		}	
@@ -35,3 +26,4 @@ $s=1;
 			if (sign_in()) { echo "<div style='clear:both;'></div>"; }
 
 		?>
+
