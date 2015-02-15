@@ -88,6 +88,42 @@ function rrmdir($dir) {
 	rmdir($dir);
 }
 
+function random_string($length=6) {
+
+    $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPRQSTUVWXYZ0123456789";
+
+    $code = "";
+
+    $clen = strlen($chars) - 1;  
+    while (strlen($code) < $length) {
+
+            $code .= $chars[mt_rand(0,$clen)];  
+    }
+
+    return $code;
+
+}
+
+function load_image($uploaddir,$uploadfile) {
+	//$uploaddir = "$path/images/gallery/$gallery_id/";
+	//$uploadfile = $uploaddir.$last_id.$_FILES['userfile']['name'];
+//	$uploadfile = $uploaddir.$last_id.'.png';
+
+	//echo $uploadfile;
+
+	//echo '<pre>'; print_r($_FILES); echo '</pre>';
+	
+ 	if($_FILES['userfile']['size'] != 0 and $_FILES['userfile']['size']<=1002400000) { // Здесь мы проверяем размер если он более 1 МБ
+			if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) { // Здесь идет процесс загрузки изображения
+				$size = getimagesize($uploadfile); // с помощью этой функции мы можем получить размер пикселей изображения	  
+			} else { 
+		 		exit('Файл не загружен, попробуйте еще раз');	
+			}
+ 	} else { 
+ 		exit('Размер файла не должен превышать 1000Кб');
+	}
+}
+
 function create($data,$table_name) {
 	$keys = implode(",", array_keys($data));
 	$values = implode("', '", $data);
@@ -95,6 +131,7 @@ function create($data,$table_name) {
 		INSERT INTO $table_name 
 		($keys) VALUES ('$values');		
 	";
+	echo $sql;
 	$result=mysql_query($sql,Database::$mConnect) or die(mysql_error());
 }
 

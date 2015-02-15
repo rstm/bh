@@ -32,8 +32,8 @@
 				ул. Муштари, 2А, Казань, Республика Татарстан, 8 (843) 580-00-01
 			</div>
 			<div class='small_contact'>
-				<a href='https://vk.com/battlehall'><img src='/images/small_youtube.png' onmouseover="this.src='/images/small_youtube_hover.png';"  onmouseout="this.src='/images/small_youtube.png';" /></a>
-				<a href='http://www.youtube.com/channel/UCwXUHVuYcenAvyoqJ2hS_vg'><img src='/images/small_vk.png' onmouseover="this.src='/images/small_vk_hover.png';"  onmouseout="this.src='/images/small_vk.png';" /></a>
+				<a href='http://www.youtube.com/channel/UCwXUHVuYcenAvyoqJ2hS_vg'><img src='/images/small_youtube.png' onmouseover="this.src='/images/small_youtube_hover.png';"  onmouseout="this.src='/images/small_youtube.png';" /></a>
+				<a href='https://vk.com/battlehall'><img src='/images/small_vk.png' onmouseover="this.src='/images/small_vk_hover.png';"  onmouseout="this.src='/images/small_vk.png';" /></a>
 			</div>
 		</div>
 	</footer>

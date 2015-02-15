@@ -8,46 +8,47 @@ if ( empty($_SESSION['authorized'])
 
 
 $path = $_SERVER['DOCUMENT_ROOT'];
-$return_path = '/admin/team/show.php';
 $table_name = 'team';
 
 include ($path.'/lib/functions.php');
 
 
-
-
 $post = post_escape($_POST);
 
+$return_path = '/admin/team/show.php?id='.$post['data']['game_id'];
+
+
 if ($_POST['action']=='delete') {
+	$path = "$path/images/team/{$post['data']['avatar']}.png";
+	unlink($path);
 	delete($post['id'], $table_name);
-	header("Location: $return_path?id={$post['game_id']}");
+	header("Location: $return_path");
 }	
 
 if ($_POST['action']=='update') {
-	
-	$sql="
-		update $table_name set
-		first_field = '{$post['first_field']}',
-		second_field = '{$post['second_field']}'
-		where id = {$post['id']};
-	";
-	//echo $sql;
-	$result=mysql_query($sql,Database::$mConnect);
-	header("Location: $return_path?id={$post['game_id']}");
+	$delete_path = "$path/images/team/{$post['old_avatar']}.png";
+	unlink($delete_path);
+	$image_name = random_string();
+	$uploaddir = "$path/images/team/";
+	$uploadfile = $uploaddir.$image_name.'.png';
+	load_image($uploaddir, $uploadfile);	
+	$post['data']['avatar'] = $image_name;
+	update($post['data'], $post['id'], $table_name);
+	header("Location: $return_path");
 }
 
 if ($_POST['action']=='new') {
+	$image_name = random_string();
+	$post['data']['avatar'] = $image_name;
+	create($post['data'], $table_name);
+	//$last_id = mysql_insert_id(Database::$mConnect);
 
-	$sql="
-		INSERT INTO $table_name 
-		(first_field, second_field, game_id) 
-		VALUES ('{$post['first_field']}',
-			'{$post['second_field']}', {$post['game_id']} )
-	";
-	//echo $sql;
-	$result=mysql_query($sql,Database::$mConnect);
+	$uploaddir = "$path/images/team/";
+	//$uploadfile = $uploaddir.$last_id.$_FILES['userfile']['name'];
+	$uploadfile = $uploaddir.$image_name.'.png';
+	load_image($uploaddir, $uploadfile);
 
-	header("Location: $return_path?id={$post['game_id']}");
+	header("Location: $return_path");
 }
 
 ?>

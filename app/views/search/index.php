@@ -16,10 +16,16 @@
 					while ($row = mysql_fetch_array($data['result'])) { 
 						$position = '';
 						if (($s - 1) % 3 == 0) $position = 'first';
+						
+						$timestamp = strtotime( $row['tournament_date']);
+						$month = array("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
+						$day = date('j', $timestamp);
+						$i = date('n', $timestamp) - 1;
+						$year = date('o', $timestamp);
 				?>
 					<li class='one_news <?=$position?>'>
-							<div class='date'><a href='/news/show.php?id=<?=$row['id']?>'><?=$row['title']?></a></div>
-							<span class='date'><?=$row['anons']?></span>
+							<div class='date'><?=$day.' '.$month[$i].' '.$year?></div>
+							<a href='/news/show.php?id=<?=$row['id']?>'><?=$row['title']?></a>
 					</li>
 				<? 
 						$s++;

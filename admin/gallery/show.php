@@ -4,7 +4,7 @@
 <div class='container calendar'>
 	<div class='actions'>
 		<form method="post" enctype="multipart/form-data" action="/app/models/photos.php">
-   			<input type="file" name="userfile" multiple accept="image/*">
+ 			<input type="file" name="userfile" multiple accept="image/*">
 			<input type='hidden' name='action' value='new'/>
 			<input type='hidden' name='gallery_id' value='<?php echo $_GET['id'];?>' />
 			<input type="submit" value="Добавить фото">
