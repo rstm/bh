@@ -16,7 +16,7 @@ include_once $path.'/header.php';
 					$category = mysql_fetch_assoc($result2);
 					$data['category_title'] = mb_strtoupper($category['title'], 'UTF-8');
 
-					$sql="select * from news where category_id=$category_id ORDER BY pub_date DESC, time DESC ";
+					$sql="select * from news where category_id=$category_id ORDER BY tournament_date DESC, time DESC ";
 					$data['result'] = mysql_query($sql, Database::$mConnect);
 					
 					show_v2('news/index.php', $data);
