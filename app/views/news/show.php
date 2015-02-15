@@ -7,10 +7,10 @@ $sql = "select title from category_news
 $result2 = mysql_query($sql,Database::$mConnect);
 $category = mysql_fetch_assoc($result2);
 $category_title = mb_strtoupper($category['title'], 'UTF-8');
-$timestamp = strtotime( $news['pub_date']);
+$timestamp = strtotime( $news['tournament_date']);
 $month = array("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
 $day = date('j', $timestamp);
-$i = date('n', $timestamp);
+$i = date('n', $timestamp) - 1;
 $year = date('o', $timestamp);
 ?>
 <section>

@@ -48,7 +48,7 @@ include_once 'header.php'; ?>
 			
 				<div class='clear'></div>
 				<?php
-					$sql="select * from news where main = 1 ORDER BY pub_date DESC, time DESC LIMIT 6";
+					$sql="select * from news where main = 1 ORDER BY tournament_date DESC, time DESC LIMIT 6";
 					$data['result']=mysql_query($sql,Database::$mConnect);
 					show_v2('news/main.php',$data);
 				?>		
