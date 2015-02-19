@@ -8,6 +8,7 @@ $data['next'] = NULL;
 
 $sql = "
 	select * from news where tournament = 1 
+	and tournament_date < NOW()
 	ORDER BY tournament_date DESC
 ";
 $data['all'] = mysql_query($sql,Database::$mConnect) or die(mysql_error());
