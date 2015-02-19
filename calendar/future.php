@@ -26,7 +26,8 @@ $result = mysql_query($sql,Database::$mConnect) or die(mysql_error());
 
 $sql = "
 	select * from news where tournament = 1 
-	ORDER BY tournament_date DESC
+	and tournament_date > NOW()
+	ORDER BY tournament_date ASC
 ";
 $data['all'] = mysql_query($sql,Database::$mConnect) or die(mysql_error());
 show_v2('calendar/index.php',$data);
