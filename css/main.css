@@ -1193,6 +1193,12 @@ clearfix::after {
   flex-wrap: wrap;
 }
 
+.calendar_v2 .elements_row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 
 .calendar_v2 .element {
 	//display: table-cell;

@@ -15,3 +15,4 @@
 		</a>
 	</li>
 </ul>
+<div class='clear'></div>

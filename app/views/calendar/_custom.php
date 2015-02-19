@@ -22,7 +22,9 @@ while ($row = mysql_fetch_array($data['all'])) {
 	if ($current_month != $i) {
 		$s = 1;
 
-		if ($current_month != -99) echo '</ul></div>';
+		if ($current_month != -99) print "
+			</ul></div>
+		";
 		$current_month = $i;
 ?>
 	
