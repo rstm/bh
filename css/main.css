@@ -1131,8 +1131,8 @@ clearfix::after {
 
 /*-------CALENDAR_V2--------*/
 
-.calendar_v2 {
-
+.calendar_v2 h1 {
+	clear: both;
 }
 
 .calendar_v2 .elements_row.next {
