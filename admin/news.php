@@ -5,7 +5,7 @@
 <?php
 
 	//show_news(1);
-	$sql="select * from news ORDER BY pub_date DESC, time DESC ";
+	$sql="select * from news ORDER BY tournament_date DESC, time DESC ";
 	$result=mysql_query($sql,Database::$mConnect);
 	show('admin/news/index.php', $result);
 

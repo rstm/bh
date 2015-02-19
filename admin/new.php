@@ -4,7 +4,7 @@ include 'header.php';
 <script src="../js/tinymce/tinymce.min.js"></script>
 <script>
 	tinymce.init({
-		selector:'textarea',
+		selector:'#text',
     plugins: "image jbimages link",
   	toolbar: "link bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent jbimages",
 		menubar: false,
@@ -15,11 +15,12 @@ include 'header.php';
 	});
 </script>
 <div class='container'>
-<form method="post" action="/app/models/news.php">
+<form method="post" enctype="multipart/form-data" action="/app/models/news.php">
 	<p>Заголовок: <input type="text" name="data[title]" /></p>
-	<p>Анонс: 
-	<textarea id='anons' name="data[anons]" maxlength="99999" rows=3 cols=60 placeholder="Введите текст">
-	</textarea> 
+	<p>Анонс:</p>
+	<p>
+		<textarea id='anons' name="data[anons]" maxlength="99999" rows=3 cols=60 placeholder="Введите текст">
+		</textarea> 
 	</p>
 	<p>Текст: 
 	<textarea id='text' name="data[text]" maxlength="99999" rows=10 cols=60 placeholder="Введите текст">
@@ -43,6 +44,9 @@ include 'header.php';
 	<p>
 		<input type="hidden" name="data[tournament]" value="0" />
 		<label><input id='tournament_check' type='checkbox' name='data[tournament]' value='1' />Событие</label>
+		<span id="tournament_date">
+			| Картинка анонса(рекомендуемое разрешение 630x205): <input type="file" name="userfile" multiple accept="image/*"></span>
+
 	</p>
 	<p>Дата:	<input type='date' name='data[tournament_date]' /></p>
 	<input type="submit" value="Добавить">

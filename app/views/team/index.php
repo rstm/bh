@@ -12,5 +12,6 @@
 			<?php } ?>
 		</div>
 	</div>
+	<div class='clear'></div>
 </section>
 

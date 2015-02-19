@@ -21,7 +21,7 @@ header img {
 header nav {
 	font-family: bulletin_light;
 	float: right;
-	margin-top: 55px;
+	margin: 54px 28px 0 0;
 	font-size: 21px;
 }
 
@@ -122,6 +122,42 @@ header nav > ul a span {
 
 .block {
 	padding: 46px 0;
+}
+
+.header_search {
+	float: right;
+	display: block;
+	margin-top: 23px;
+	z-index: 9999;
+	position: relative;
+	cursor: pointer;
+}
+
+.header_search input {
+	z-index: -1;
+	width: 0;
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	height: 18px;
+	display: none;
+	padding: 5px;
+	background-color: black;
+	border: 1px solid rgb(95, 93, 93);
+	color: white;
+
+	/*padding: 5px 5px 5px 32px;
+	background-color: black;
+	border: 1px solid rgb(95, 93, 93);
+	color: white;
+	background: url("/images/search.png") no-repeat scroll 4px 2px black;
+	*/
+}
+.header_search img {
+	width: 24px;
+	height: 24px;		
+	margin-left: -16px;
+	z-index: 99;
 }
 /*-------SLIDEJS--------*/
 
@@ -346,7 +382,8 @@ section hr.block_header::after {
 	font-family: 'verdana';
 	font-size: 15px;
 	height: 100px;
-	margin-bottom: 8px;
+	margin-bottom: 8px;	
+	padding-bottom: 10px;
 }
 .news .anons p {
 	margin:5px 0;
@@ -375,19 +412,20 @@ section hr.block_header::after {
 footer {	
 	clear: both;
 	background-color: rgb(21,21,21);
-	height: 327px;
-	//margin-top: 50px;
+	//height: 327px;
+	margin-top: 179px;
 }
 footer > div {
 	width: 976px;
 	margin: 0 auto;
+	padding-bottom: 48px;
 }
 .footer_menu h3 {
 	font-family: bulletin_regular;
 	color: white;
 	font-weight: 100;
 	font-size: 23px;
-	margin-top: 42px;
+	margin-top: 34px;
 	margin-bottom: 10px;
 }
 .footer_menu ul {
@@ -407,7 +445,7 @@ footer > div {
 .footer_menu div{
 	width:auto;	
 	float:left;	
-	margin: 0 30px 26px 21px;
+	margin: 0 37px 138px 14px;
 }
 
 .footer_menu div:last-child {
@@ -450,10 +488,15 @@ footer .address {
 }
 
 .small_contact {
-	float: right;
-	margin-top: -60px;
+	float: left;
+	margin-top: -103px;
 }
 
+.small_contact img.social_mini {
+	width: 40px;
+	height: 40px;
+	margin: 0 5px 13px 0;
+}
 /*-------SYSTEM INFO--------*/
 
 .system_info {
@@ -1083,4 +1126,147 @@ clearfix::after {
 	background: url('/images/close.png') no-repeat;
 	height: 27px;
 	float: right;
+}
+
+
+/*-------CALENDAR_V2--------*/
+
+.calendar_v2 {
+
+}
+
+.calendar_v2 .elements_row.next {
+	margin-bottom: 55px;
+}
+
+.calendar_v2 .next_element_image {
+	//display: table-cell;
+}
+
+.calendar_v2 .elements_row.next .element {
+	position: relative;
+}
+.calendar_v2 .element .more2 {
+	font-family: 'verdana';
+	position: absolute;
+	right: 17px;
+	bottom: 13px;
+	border-bottom: 2px solid #048deb;
+	padding-bottom: 3px;
+	font-size: 12px;
+}
+
+.calendar_v2 .elements_row.next .header {
+	font-size: 32px;
+	font-family: 'bebas_neuebold';
+}
+
+.calendar_v2 .next_element_image a {
+	height: 204px;
+	display: block;
+}
+
+.calendar_v2 .elements_row.next .body {
+	font-size: 17px;
+	font-family: 'verdana';
+}
+
+.calendar_v2 .next_element_image img {
+	height: 100%;	
+	width: 630px;
+}
+
+.calendar_v2 .elements {
+	margin-bottom: 59px;
+}
+
+.calendar_v2 .elements_row {
+
+	margin: 0 0 27px 0;
+	padding: 0;
+	display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+
+.calendar_v2 .element {
+	//display: table-cell;
+	display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;	
+	width: 281px;	
+	//height: 0px;
+	margin-right: 66px;
+	vertical-align: top;
+	background-color: #e2e8f4;
+}
+
+.calendar_v2 .element:last-child {
+	margin-right: 0;
+}
+
+.calendar_v2 .element a {
+	width: 100%;
+}
+
+.calendar_v2 .element a:hover .body, .calendar_v2 .element a:hover .more2 {
+	color: rgb(4, 141, 201);
+}
+
+.calendar_v2 .next .element a:hover .body {
+	color: black;
+}
+
+
+.calendar_v2 .element .header, .calendar_v2 .element .body {
+	
+}
+
+.calendar_v2 .element .header {
+	padding: 6px 17px;
+	color: white;
+	font-family: 'tahoma';
+	font-size: 14px;
+	background-color: #048deb;
+}
+
+.calendar_v2 .element .body {
+	padding: 14px 17px 16px 17px;
+	font-family: 'tahoma';
+	font-size: 15px;
+	
+	color: black;
+}
+
+
+.calendar_v2 .element.top .header {
+	font-family: 'bebas_neuebold';
+	font-size: 32px;
+}
+
+
+
+.row {
+	display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+ 
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.row_element {
+	 width: 281px; /* 4 items per row */
+ 	 //float: left;
+ 	 background-color: lightgrey;
+ 	  display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        margin-right: 18px;
 }

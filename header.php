@@ -28,6 +28,10 @@ include ($path.'/lib/functions.php');
 <header>
 	<div>
 		<a href='/'><img src='/images/logo.png' /></a>
+		<form class='header_search' method='get' action='search.php'>
+				<img src='/images/search.png'>
+				<input type='text' name='q' placeholder='Поиск'/>
+		</form>	
 		<nav>
 			<ul>
 			<?php 
@@ -62,7 +66,9 @@ include ($path.'/lib/functions.php');
 				}
 			?>
 			</ul>
-		</nav>		
+		
+		</nav>
+
 	</div>
 </header>
 

@@ -26,13 +26,15 @@ if ($_POST['action']=='delete') {
 }	
 
 if ($_POST['action']=='update') {
-	$delete_path = "$path/images/team/{$post['old_avatar']}.png";
-	unlink($delete_path);
-	$image_name = random_string();
-	$uploaddir = "$path/images/team/";
-	$uploadfile = $uploaddir.$image_name.'.png';
-	load_image($uploaddir, $uploadfile);	
-	$post['data']['avatar'] = $image_name;
+	if ($_FILES['userfile']['size'] != 0) {
+		$delete_path = "$path/images/team/{$post['old_avatar']}.png";
+		unlink($delete_path);
+		$image_name = random_string();
+		$uploaddir = "$path/images/team/";
+		$uploadfile = $uploaddir.$image_name.'.png';
+		load_image($uploaddir, $uploadfile);	
+		$post['data']['avatar'] = $image_name;
+	}
 	update($post['data'], $post['id'], $table_name);
 	header("Location: $return_path");
 }

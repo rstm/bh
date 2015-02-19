@@ -27,6 +27,7 @@
 				 		<input type='hidden' value='<?=$row['id']?>' name='id'/>
 				 		<input type='hidden' value='<?=$row['tournament']?>' name='tournament'/>
 				 		<input type='hidden' value='delete' name='action'/>
+						<input type="hidden" name="data[anons_image]" value="<?=$row['anons_image']?>" />
 				 		<input class='small_action' type='submit' value='Удалить'/>
 				 	</form>	
 			 </td>

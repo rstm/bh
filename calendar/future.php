@@ -2,41 +2,33 @@
 $path = $_SERVER['DOCUMENT_ROOT'];
 include_once $path.'/lib/nav.php';
 $nav[1]['active'] = 'active';
-include_once $path.'/header.php'; ?>
-	<section>
-		<div class='block calendar'>
-			<div>
-						
-				<!--div class='clear'></div-->
+include_once $path.'/header.php'; 
 
-				<?php
-					$sql="select * from news where tournament = 1 AND tournament_date >= NOW() ORDER BY tournament_date DESC";
-					$result=mysql_query($sql,Database::$mConnect);
-					//
-					while ($tournament=mysql_fetch_array($result)) {
-						$timestamp = strtotime( $tournament['tournament_date']);
-						$month = array("ЯНВАРЯ", "ФЕВРАЛЯ", "МАРТА", "АПРЕЛЯ", "МАЯ", "ИЮНЯ", "ИЮЛЯ", "АВГУСТА", "СЕНТЯБРЯ", "ОКТЯБРЯ", "НОЯБРЯ", "ДЕКАБРЯ");
-						$day = date('j', $timestamp);
-						$i = date('n', $timestamp) - 1;
-						$title = mb_strtoupper($tournament['title'], 'UTF-8');
-						print "			
-							<h1>$day {$month[$i]}</h1>
-						 	<hr noshade class='block_header' >
-						 	<a href='/news/show.php?id={$tournament['id']}' class='title'>{$tournament['title']}</a>
-						 	<div class='anons'>{$tournament['anons']}</div>
-						 	<!--div class='photos'--> 
-						";
-						/*$sql = "select * from photos 
-								where gallery_id = {$tournament['id']} LIMIT 5";
-						$result2 = mysql_query($sql,Database::$mConnect);
-						show('photos/index.php',$result2);
-						if(mysql_num_rows($result2) == 5 )
-							print "<a href='/gallery.php?id={$tournament['id']}'><div class='last more_images'>Еще фотографии</div></a>";
-						print "</div>";*/
-					}
-					
-				?>				
-			</div>
-		</div>
-	</section>
-<?php include_once $path.'/footer.php'; ?>
+$sql = "
+	select * from news where tournament = 1 
+	and tournament_date > NOW()
+	ORDER BY tournament_date DESC
+	LIMIT 1
+";
+$result = mysql_query($sql,Database::$mConnect) or die(mysql_error());
+	if ($next = mysql_fetch_array($result)) {
+	$timestamp = strtotime($next['tournament_date']);
+	$day = date('j', $timestamp);
+	$i = date('n', $timestamp) - 1;
+	//$next_year = date('o', $timestamp);
+	$data['next'] = array (
+			"date" => $day.' '.mb_strtoupper($month[$i], 'UTF-8'),
+			"title" => $next['title'],
+			"id" => $next['id']
+		);
+}	else $data['next'] = NULL;
+
+$sql = "
+	select * from news where tournament = 1 
+	ORDER BY tournament_date DESC
+";
+$data['all'] = mysql_query($sql,Database::$mConnect) or die(mysql_error());
+show_v2('calendar/index.php',$data);
+
+include_once $path.'/footer.php'; 
+?>

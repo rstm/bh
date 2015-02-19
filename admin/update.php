@@ -8,7 +8,7 @@ $row = $row=mysql_fetch_assoc($result);
 <script src="../js/tinymce/tinymce.min.js"></script>
 <script>
 	tinymce.init({
-		selector:'textarea',
+		selector:'#text',
 	    plugins: "image jbimages link",
       	toolbar: "link bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent jbimages",
 		menubar: false,
@@ -23,10 +23,10 @@ $row = $row=mysql_fetch_assoc($result);
 
 
 print<<<here
-<form method="post" action="/app/models/news.php">
+<form method="post" enctype="multipart/form-data" action="/app/models/news.php">
 	<p>Заголовок: <input type="text" name="data[title]" value="{$row['title']}" /></p>
-	<p>Анонс: 
-	<textarea id='anons' name="data[anons]" maxlength="99999" rows=3 cols=60>
+	<p>Анонс:</p> 
+	<p><textarea id='anons' name="data[anons]" maxlength="99999" rows=3 cols=60>
 	{$row['anons']}
 	</textarea> 
 	</p>
@@ -62,7 +62,8 @@ $tournament = ($row['tournament'] == 1) ? 'checked' : '';
 
 <input type="hidden" name="id" value="<?=$row['id']?>">
 <input type="hidden" name="action" value="update">
-
+<input type="hidden" name="data[tournament]" value="<?=$row['tournament']?>" />
+<input type="hidden" name="old_anons_image" value="<?=$row['old_anons_image']?>" />
 <p>
 <input type="hidden" name="data[main]" value="0" />
 <label><input <?=$checked?> type='checkbox' name='data[main]' value='1' /> На главной</label>
@@ -71,6 +72,11 @@ $tournament = ($row['tournament'] == 1) ? 'checked' : '';
 <p>
 	Дата:	<input type='date' name='data[tournament_date]' value='<?=$row['tournament_date']?>'/>
 </p>
+
+<? if($row['tournament'] == 1) { ?>
+<p>Поменять картинку анонса(рекомендуемое разрешение 630x205): <input type="file" value="<?=$row['old_anons_image']?>" name="userfile" multiple accept="image/*"></p>
+<? } ?>
+
 <input type="submit" value="Обновить">
 </form>
 </div>

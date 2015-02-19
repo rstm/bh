@@ -2,6 +2,8 @@
 $path = $_SERVER['DOCUMENT_ROOT'];
 include ($path.'/lib/db_connect.php');
 
+$month = array("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
+
 function check_login() {
 	if(isset($_COOKIE['remember_token'])) {
 
@@ -39,7 +41,7 @@ function show($method, $result) {
 }
 
 function show_v2($method, $data) {
-	global $path;
+	global $path, $month;
 	include $path.'/app/views/'.$method;
 }
 
@@ -112,16 +114,13 @@ function load_image($uploaddir,$uploadfile) {
 	//echo $uploadfile;
 
 	//echo '<pre>'; print_r($_FILES); echo '</pre>';
-	
- 	if($_FILES['userfile']['size'] != 0 and $_FILES['userfile']['size']<=1002400000) { // Здесь мы проверяем размер если он более 1 МБ
-			if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) { // Здесь идет процесс загрузки изображения
-				$size = getimagesize($uploadfile); // с помощью этой функции мы можем получить размер пикселей изображения	  
-			} else { 
-		 		exit('Файл не загружен, попробуйте еще раз');	
-			}
- 	} else { 
- 		exit('Размер файла не должен превышать 1000Кб');
-	}
+
+	if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) { // Здесь идет процесс загрузки изображения
+		$size = getimagesize($uploadfile); // с помощью этой функции мы можем получить размер пикселей изображения	  
+	} 
+	/*else { 
+ 		exit('Файл не загружен, попробуйте еще раз');	
+	}*/
 }
 
 function create($data,$table_name) {
@@ -131,7 +130,6 @@ function create($data,$table_name) {
 		INSERT INTO $table_name 
 		($keys) VALUES ('$values');		
 	";
-	echo $sql;
 	$result=mysql_query($sql,Database::$mConnect) or die(mysql_error());
 }
 

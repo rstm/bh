@@ -56,5 +56,6 @@ include_once 'header.php'; ?>
 				<img class='loading' src='/images/loading.gif' />
 			</div>
 		</div>
+		<div class="clear"></div>
 	</section>
 <?php include_once $path.'/footer.php'; ?>

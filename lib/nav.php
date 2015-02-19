@@ -20,7 +20,7 @@ $nav = array(
 				array('title' => 'Казань', 'url' => '/news/?category_id=2')
 			)
 		),
-		array( 'title' => 'КОМАНДА', 'url' => '#', 'active' => '',
+		array( 'title' => 'КОМАНДА', 'url' => '/team', 'active' => '',
 			'sub_menu' => array( 
 				array('title' => 'Battle Hall Staff', 'url' => '/team/stuff.php'),
 				array('title' => 'Battle Hall Киберспорт', 'url' => '/team/cybersport/')
@@ -36,7 +36,7 @@ $nav = array(
 		array( 'title' => 'СТРИМЫ', 'url' => '/streams', 'active' => '',
 			'sub_menu' => array( 
 				array('title' => 'Live', 'url' => '/streams/live.php'),
-				array('title' => 'Воды', 'url' => '/streams/old.php')
+				array('title' => 'VoD', 'url' => '/streams/old.php')
 			)
 		)
 	);

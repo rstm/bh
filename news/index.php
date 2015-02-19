@@ -24,5 +24,6 @@ include_once $path.'/header.php';
 				
 			</div>
 		</div>
+		<div class="clear"></div>		
 	</section>
 <?php include_once $path.'/footer.php'; ?>
