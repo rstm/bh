@@ -1204,6 +1204,7 @@ clearfix::after {
 	margin-right: 66px;
 	vertical-align: top;
 	background-color: #e2e8f4;
+	float: left;
 }
 
 .calendar_v2 .element:last-child {
