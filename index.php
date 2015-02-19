@@ -10,8 +10,7 @@ include_once 'header.php'; ?>
 			<div class='image-message'>
 				<h2>BATTLE HALL</h2>
 				<p>
-					Уникальная киберарена. 112 ультрасовременных компьютеров.<br>
-					24/7 
+					Казань, Муштари 2а, 8435800001, круглосуточно
 				</p>
 			</div>
     		<img src="/images/slide1.png" alt='asd' >  
@@ -33,7 +32,11 @@ include_once 'header.php'; ?>
     <div>
 			<div class='image-message'>
 				<h2>BATTLE HALL</h2>
-				<p>Казань, Муштари 2а, 8435800001, круглосуточно</p> 	  
+				<p>
+					Уникальная киберарена. 112 ультрасовременных компьютеров.<br>
+					24/7 
+				</p> 	  
+			
 			</div>
     		<img src="/images/slide4.png" >  
     </div>

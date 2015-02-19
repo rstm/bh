@@ -7,7 +7,7 @@ include_once $path.'/header.php';
 $sql = "
 	select * from news where tournament = 1 
 	and tournament_date > NOW()
-	ORDER BY tournament_date DESC
+	ORDER BY tournament_date ASC
 	LIMIT 1
 ";
 $result = mysql_query($sql,Database::$mConnect) or die(mysql_error());
@@ -19,6 +19,7 @@ $result = mysql_query($sql,Database::$mConnect) or die(mysql_error());
 	$data['next'] = array (
 			"date" => $day.' '.mb_strtoupper($month[$i], 'UTF-8'),
 			"title" => $next['title'],
+			"anons_image" => $next['anons_image'],
 			"id" => $next['id']
 		);
 }	else $data['next'] = NULL;

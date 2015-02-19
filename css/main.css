@@ -133,6 +133,11 @@ header nav > ul a span {
 	cursor: pointer;
 }
 
+.header_search input::-webkit-input-placeholder {color: white;}
+.header_search input::-moz-placeholder          {color: white;}/* Firefox 19+ */
+.header_search input:-moz-placeholder           {color: white;}/* Firefox 18- */
+.header_search input:-ms-input-placeholder      {color: white;}
+
 .header_search input {
 	z-index: -1;
 	width: 0;
@@ -145,6 +150,8 @@ header nav > ul a span {
 	background-color: black;
 	border: 1px solid rgb(95, 93, 93);
 	color: white;
+
+
 
 	/*padding: 5px 5px 5px 32px;
 	background-color: black;
