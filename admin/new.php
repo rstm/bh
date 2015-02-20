@@ -5,15 +5,14 @@ include 'header.php';
 <script>
 	tinymce.init({
 		selector:'.edit',
-	    plugins: "image jbimages link",
+	    plugins: "image jbimages link paste",
       	toolbar: "link bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent jbimages",
 		menubar: false,
     height: 300,
       	relative_urls:false,
       	content_css : "/css/tiny_mce.css",
       	font_size_style_values : "15px",
-   	oninit : "setPlainText",
-		plugins : "paste"
+   	oninit : "setPlainText"
 	});
 </script>
 <div class='container'>
