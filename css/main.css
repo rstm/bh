@@ -773,6 +773,7 @@ clearfix::after {
 .show_news img.anons {
 	display: block;
 	width: 100%;
+	height: 300px;
 	margin: 0 0 31px 0;
 }
 
