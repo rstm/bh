@@ -261,6 +261,12 @@ table tr:nth-child(2n){
 }
 
 #tournament_date {
-	display: inline-block; 
-	opacity: 0;
+	display: none; 
+	padding: 10px;
+	border: 1px solid lightgrey;
+	//opacity: 0;
+}
+
+.edit_info input[type=text] {
+	width: 400px;
 }

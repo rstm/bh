@@ -43,6 +43,19 @@ if ($_POST['action']=='update') {
 		load_image($uploaddir, $uploadfile);	
 		$post['data']['anons_image'] = $image_name;
 	}
+
+	if ($post['data']['tournament'] == 1) {
+		$sql = "
+			UPDATE event_info SET
+			cost = '{$post['event_info']['cost']}',
+			registration = '{$post['event_info']['registration']}',
+			prizes = '{$post['event_info']['prizes']}',
+			time = '{$post['event_info']['time']}'
+			WHERE event_id = {$post['id']};		
+		";
+		$result = mysql_query($sql,Database::$mConnect) or die(mysql_error());
+	}
+
 	update($post['data'], $post['id'], $table_name);
 	header("Location: $return_path");
 }
@@ -67,6 +80,9 @@ if ($_POST['action']=='new') {
 	//$uploadfile = $uploaddir.$last_id.$_FILES['userfile']['name'];
 		$uploadfile = $uploaddir.$image_name.'.png';
 		load_image($uploaddir, $uploadfile);
+
+		$post['event_info']['event_id'] = $last_id;
+		create($post['event_info'], 'event_info');
 	}
 
 	header("Location: $return_path");

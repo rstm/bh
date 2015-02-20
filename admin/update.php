@@ -1,24 +1,33 @@
 ﻿<?php
 include 'header.php';
 $id = mysql_real_escape_string($_GET['id']);
-$sql="select * from news where id = {$_GET['id']} ORDER BY pub_date DESC, time DESC LIMIT 1";
-$result=mysql_query($sql,Database::$mConnect);
-$row = $row=mysql_fetch_assoc($result);
+$sql = "select * from news where id = $id ORDER BY pub_date DESC, time DESC LIMIT 1";
+$result = mysql_query($sql,Database::$mConnect);
+$row = mysql_fetch_assoc($result);
+
+if($row['tournament'] == 1) {
+	$sql = "select * from event_info where event_id = $id LIMIT 1";
+	$result = mysql_query($sql,Database::$mConnect);
+	$event_info = mysql_fetch_assoc($result);
+}
+
 ?>
 <script src="../js/tinymce/tinymce.min.js"></script>
 <script>
 	tinymce.init({
-		selector:'#text',
+		selector:'.edit',
 	    plugins: "image jbimages link",
       	toolbar: "link bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent jbimages",
 		menubar: false,
-	    height: 300,
+    height: 300,
       	relative_urls:false,
       	content_css : "/css/tiny_mce.css",
-      	theme_advanced_font_sizes: "10px,12px,13px,14px,16px,18px,20px",
+      	font_size_style_values : "15px",
+   	oninit : "setPlainText",
+		plugins : "paste"
 	});
 </script>
-<div class='container'>
+<div class='container edit_info'>
 <?php
 
 
@@ -26,12 +35,10 @@ print<<<here
 <form method="post" enctype="multipart/form-data" action="/app/models/news.php">
 	<p>Заголовок: <input type="text" name="data[title]" value="{$row['title']}" /></p>
 	<p>Анонс:</p> 
-	<p><textarea id='anons' name="data[anons]" maxlength="99999" rows=3 cols=60>
-	{$row['anons']}
-	</textarea> 
+	<p><textarea id='anons' name="data[anons]" maxlength="99999" rows=3 cols=60>{$row['anons']}</textarea> 
 	</p>
 	<p>Текст: 
-	<textarea id='text' name="data[text]" maxlength="99999" rows=10 cols=60 >
+	<textarea class='edit' id='text' name="data[text]" maxlength="99999" rows=10 cols=60 >
 	{$row['text']}
 	</textarea> 
 
@@ -74,7 +81,14 @@ $tournament = ($row['tournament'] == 1) ? 'checked' : '';
 </p>
 
 <? if($row['tournament'] == 1) { ?>
-<p>Поменять картинку анонса(рекомендуемое разрешение 630x205): <input type="file" value="<?=$row['old_anons_image']?>" name="userfile" multiple accept="image/*"></p>
+<p>Поменять картинку анонса(рекомендуемое разрешение 630x205): <input type="file"  name="userfile" multiple accept="image/*"></p>
+<p>Время:	<input type='text' name='event_info[time]' value="<?=$event_info['time']?>" placeholder='в 9:00 утра'/></p>
+<p>Стоимость:	<input type='text' value="<?=$event_info['cost']?>" name='event_info[cost]' placeholder='не обязательно число, можно текст'/></p>
+<p>Регистрация:	<input type='text' value="<?=$event_info['registration']?>" name='event_info[registration]' placeholder='не обязательно ссылка, можно текст' /></p>
+<p>Призы:</p>
+<p>
+	<textarea class='edit' name="event_info[prizes]" maxlength="99999" rows=1 cols=30 placeholder="Введите текст"><?=$event_info['prizes']?></textarea> 
+</p>
 <? } ?>
 
 <input type="submit" value="Обновить">

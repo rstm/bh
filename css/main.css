@@ -748,12 +748,62 @@ clearfix::after {
 
 .show_news h1 { margin-bottom: 0; }
 .show_news h2 { 
-	margin: 12px 0;
+	margin: 5px 0 10px 0;
 	font-weight: normal;
-	font-size: 29px; 
+	font-size: 32px; 
+	font-family: 'verdana';
 }
 .show_news .date {
-	font-size: 14px;
+	font-size: 13px;
+	font-family: 'verdana';
+}
+
+.show_news .text {
+	font-size: 16px !important;
+	clear: both;
+	margin-top: 40px;
+}
+
+.show_news .text img {
+	width: 100%;
+}
+
+.show_news img.anons {
+	display: block;
+	width: 100%;
+	margin: 33px 0 31px 0;
+}
+
+.share_news {
+	margin-top: 76px;
+}
+
+.share_news a {
+	margin-right: 10px;
+}
+
+.event_info label {
+	font-family: 'bebas_neuebold';
+	font-size: 35px;
+	color: #048deb;
+	line-height: 27px;
+	float: left;
+	clear: both;
+	width: 151px;
+	margin-bottom: 49px;
+}
+
+.event_info .value {
+	font-family: 'verdana';
+	font-size: 17px;
+	color: black;
+	padding-left: 38px;
+	float: left;
+	width: 611px;
+}
+
+.event_info .value p {
+	margin: -4px 0 17px 0 !important
 }
 
 /*-------CONTACTS--------*/
