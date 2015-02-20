@@ -53,11 +53,12 @@ if ($_POST['action']=='update') {
 			time = '{$post['event_info']['time']}'
 			WHERE event_id = {$post['id']};		
 		";
+		echo $sql;
 		$result = mysql_query($sql,Database::$mConnect) or die(mysql_error());
 	}
 
 	update($post['data'], $post['id'], $table_name);
-	header("Location: $return_path");
+	//header("Location: $return_path");
 }
 
 if ($_POST['action']=='new') {

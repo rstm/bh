@@ -8,8 +8,9 @@
 
 			<h2><?=$data['news']['title']?></h2>
 			<span class='date'><?=$data['date'].' '.$data['year']?></span>
-			<img class='anons' src='/images/news/<?=$data['news']['anons_image']?>.png'/>
-
+			<? if ($data['news']['anons_image']) { ?>
+				<img class='anons' src='/images/news/<?=$data['news']['anons_image']?>.png'/>
+			<? } ?>
 			<div class='event_info'>	
 					<label>ДАТА</label>
 					<div class='value'><?=$data['date'].' '.$data['event_info']['time']?></div>

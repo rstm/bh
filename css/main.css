@@ -756,6 +756,8 @@ clearfix::after {
 .show_news .date {
 	font-size: 13px;
 	font-family: 'verdana';
+	margin-bottom: 33px;
+	display: block;
 }
 
 .show_news .text {
@@ -771,7 +773,7 @@ clearfix::after {
 .show_news img.anons {
 	display: block;
 	width: 100%;
-	margin: 33px 0 31px 0;
+	margin: 0 0 31px 0;
 }
 
 .share_news {
