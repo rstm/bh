@@ -4,7 +4,7 @@ $nav = array(
 			'sub_menu' => array( 
 				array('title' => 'Характеристики', 'url' => '/system_info.php'),
 				array('title' => 'Цены', 'url' => '/prices.php'),
-				array('title' => 'Медиа', 'url' => '/media.php')
+				array('title' => 'Медиа', 'url' => '/media/')
 			)
 	 	),
 		array( 'title' => 'КАЛЕНДАРЬ', 'url' => '/calendar', 'active' => '',
