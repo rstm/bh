@@ -1,42 +1,42 @@
 <section>
 	<div class='block media'>
 		<div>
-			<?php
-			$s=1;
-			$row=mysql_fetch_array($result);
-			?>
-			<h1>МЕДИА</h1>
+			<h1>МЕДИА:ВИДЕО</h1>
 			<hr noshade class='block_header' > 
-
 			<div class='clear'></div>
 
 			<div class='video first'>
-				<div class='url'><?=$row['url']?></div>
+				<div class='url'><?=$data['video']['url']?></div>
 					 
 				<div class='info'>
-					<span><?=$row['title']?></span>
+					<span><?=$data['video']['title']?></span>
 					<hr>
-					<div class='anons'><?=$row['anons']?></div>
+					<div class='anons'><?=$data['video']['anons']?></div>
 				</div>
+
+				<a href='/media/video' class='media_more'>Ещё больше видео</a>
 			</div>
-			<? 
-				while ($row = mysql_fetch_array($result)) {	
-					if ($s % 4 == 0) $position = 'last'; 
-					else $position = '';
-			?>
 
-					<div class='list_video <?=$position?>'>
-						<div id='<?=$row['id']?>' class='url_video'><?=$row['url']?></div>
-						<div class='anons_video'>
-							<span class='fullscreen'><?=$row['title']?></span>
-							<hr>
-							<div class='anons'><?=$row['anons']?></div>
-						</div>
-					</div>
-				
-			<? $s++; } ?>
+			<div class='clear'></div>
+			<h1>МЕДИА:ФОТО</h1>
+			<hr noshade class='block_header' > 
+			<div class='clear'></div>
 
-			<div id='dark'></div>
+			<div class='video first'>
+				<div class='url'>
+					<img src='/images/gallery/<?=$data['image']['event']['id'].'/'.$data['image']['id']?>.png' />
+				</div>
+					 
+				<div class='info'>
+					<span><?=$data['image']['event']['title']?></span>
+					<hr>
+					<div class='anons'><?=$data['image']['event']['anons']?></div>
+				</div>
+
+				<a href='/media/gallery' class='media_more'>Ещё больше фото</a>
+
+			</div>
+			<div class='clear'></div>
 		</div>
 	</div>
 </section>

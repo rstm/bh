@@ -420,7 +420,7 @@ footer {
 	clear: both;
 	background-color: rgb(21,21,21);
 	//height: 327px;
-	margin-top: 179px;
+	margin-top: 170px;
 }
 footer > div {
 	width: 976px;
@@ -874,21 +874,27 @@ clearfix::after {
 	font-family: tahoma;
 }
 
+/*-------ALL MEDIA--------*/
+
+
+
 
 /*-------MEDIA--------*/
 
 .media .first {
 	width:100% !important;
+	clear: both;
 }
 
 .media .first .url {
 	float:left;
+	width: 521px;
+	height: 293px;
 }
 .media .first .info {
-	float:left;
-	margin: 0 0 0 37px;
-	width: 288px;
-	height: 268px;
+	float: left;
+	margin: 0 0 0 38px;
+	width: 295px;
 }
 
 .media .first .url iframe {
@@ -900,26 +906,36 @@ clearfix::after {
 .media .video {
 	width: 313px;
 	float:left;
-	margin: 0 18px 20px 0;
+	//margin: 0 18px 44px 0;
+	margin: 0 18px 32px 0;
 	font-family: 'bebas_neuebold';
 }
 
+.media_more {
+	float: left;
+	margin: 25px 0 0 37px;
+	font-family: 'tahoma';
+	padding: 14px 33px;
+	background-color: #4f99dd;
+	color: white;
+	font-size: 18px;
+}
 
 .list_video {
-	width: 223px;
+	width: 231px;
 	float:left;
-	margin: 0 28px 20px 0;
+	margin: 0 17px 20px 0;
 	font-family: 'bebas_neuebold';
 }
 
 .list_video .url_video {
-	width: 223px;
-	height: 125px;
+	width: 231px;
+	height: 130px;
 	overflow: hidden;
 }
 .list_video .url_video iframe, .list_video .url_video object {
-	width: 223px;
-	height: 125px;
+	width: 231px;
+	height: 130px;
 }
 
 .list_video div.date {
@@ -943,9 +959,8 @@ clearfix::after {
 	width: 217px;
 	margin: 0;
 	font-size: 18px;
-	padding-top: 3px;
 	color: black;
-	//font-family: 'tahoma';
+	font-family: 'tahoma';
 	cursor: pointer;
 }
 .list_video span:hover {
@@ -960,11 +975,7 @@ clearfix::after {
 	background-color: rgb(174,174,174);
 }
 .list_video .anons_video {
-	padding: 14px 20px;
-	background-color: rgb(226,232,244);
-	margin-top: -4px;
-	border-bottom: 5px solid #048deb;
-	height: 107px;
+	padding: 9px 0px;
 }
 .list_video .anons {
 	font-family: 'verdana';
@@ -984,16 +995,12 @@ clearfix::after {
 }
 
 .video .info {
-	padding: 10px 20px;
+	padding: 5px 106px 15px 16px;
 	background-color: rgb(226,232,244);
-	margin-top: -4px;
-	border-bottom: 5px solid #048deb;
 }
 .video .anons {
 	font-family: 'verdana';
 	font-size: 15px;
-	height: 100px;
-	margin-bottom: 8px;
 }
 .video .anons p {
 	margin:5px 0;
@@ -1001,7 +1008,7 @@ clearfix::after {
 
 .video hr {
 	clear:both;
-	margin-top: 10px;
+	margin: 6px 0;
 	width: 100%;
 	border: 0;
 	height: 2px;
@@ -1011,7 +1018,7 @@ clearfix::after {
 .video span {
 	font-family: 'tahoma';
 	margin: 0;
-	font-size: 19px;
+	font-size: 18px;
 	color: black;
 }
 
