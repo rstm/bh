@@ -890,6 +890,7 @@ clearfix::after {
 	float:left;
 	width: 521px;
 	height: 293px;
+	overflow: hidden;
 }
 .media .first .info {
 	float: left;
