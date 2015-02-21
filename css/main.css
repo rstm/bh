@@ -1022,6 +1022,9 @@ clearfix::after {
 	color: black;
 }
 
+.media_video {
+	margin-bottom: 44px !important;
+}
 
 /*-------TEAM--------*/
 

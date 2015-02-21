@@ -5,7 +5,7 @@
 			<hr noshade class='block_header' > 
 			<div class='clear'></div>
 
-			<div class='video first'>
+			<div class='video first media_video'>
 				<div class='url'><?=$data['video']['url']?></div>
 					 
 				<div class='info'>
