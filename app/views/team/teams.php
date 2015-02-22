@@ -5,7 +5,7 @@
 					<a href="staff.php">
 						<img src='/images/teams.png'>
 					</a>
-					<a class='link' href="staff.php">BATTLE HALL STAFF</a>
+					<a class='link' href="/team/staff.php">BATTLE HALL STAFF</a>
 					<hr>
 				</div>
 
