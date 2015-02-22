@@ -10,7 +10,7 @@ $s=1;
 		while ($row=mysql_fetch_assoc($result))
 		{
 			
-				$position = ( $s % 3 == 0 ) ? 'last' : '';
+				$position = ( $s % 5 == 0 ) ? 'last' : '';
 
 
 			 	print "

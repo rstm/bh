@@ -1,7 +1,8 @@
-<ul>
-<?php
-while ($row=mysql_fetch_array($result)) {
-	print "<li><a href='show.php?id=$row[0]'>$row[1]</a></li>";
-}	
-?>
-</ul>
+<table>
+<? while ($row = mysql_fetch_array($result)) { ?>
+	<tr>
+		<td><?=$row['tournament_date']?></td>
+		<td><a href='show.php?id=<?=$row['id']?>'><?=$row['title']?></a></td>
+	</tr>
+<? } ?>
+</table>

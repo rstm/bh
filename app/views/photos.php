@@ -1,16 +1,6 @@
 <?php
 
 
-
-$sql="select * from photos where id_gallery = $id";
-$result=mysql_query($sql,Database::$mConnect);
-
-$s=1;
-$p=0;
-if(isset($_GET['min'])) $min=$_GET['min'];
-else $min=1;
-$max=$min+4;
-
 while ($row=mysql_fetch_array($result))
 {
 	if ($s>=$min && $s<=$max)

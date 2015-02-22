@@ -651,14 +651,16 @@ footer .address {
 }
 
 .calendar img {
-	max-width: 313px;
+	max-width: 184px;
 }
 
 .calendar div.image {
-	width: 313px;
-	height: 176px;
+	//width: 313px;
+	//height: 176px;
+	width: 184px;
+	height: 104px;
 	float:left;
-	margin: 0 18px 18px 0;
+	margin: 0 13px 16px 0;
 	overflow: hidden;
 	display: inline-block;
 	//clear: none !important;
@@ -996,13 +998,24 @@ clearfix::after {
 }
 
 .video .info {
-	padding: 5px 106px 15px 16px;
+	padding: 5px 106px 13px 16px;
 	background-color: rgb(226,232,244);
 }
 .video .anons {
 	font-family: 'verdana';
 	font-size: 15px;
+	color: black;
+	line-height: 15px;
+	color: #2f2e2e;
 }
+
+.video .date {
+	display: block;
+	font-size: 11px;
+	margin-top: 17px;
+	color: #2f2e2e;
+}
+
 .video .anons p {
 	margin:5px 0;
 }
@@ -1347,4 +1360,105 @@ clearfix::after {
         display: -ms-flexbox;
         display: flex;
         margin-right: 18px;
+}
+
+/*-------GALLERY--------*/
+
+
+.list_photo {
+	width: 313px;
+	float:left;
+	margin: 0 18px 20px 0;
+	font-family: 'bebas_neuebold';
+}
+
+.list_photo .url_photo {
+	width: 313px;
+	height: 175px;
+	overflow: hidden;
+	display: block;
+}
+.list_photo .url_photo img, .list_photo .url_photo object {
+	max-width: 313px;
+	//height: 175px;
+}
+
+.list_photo div.date {
+	text-align: center;
+	float: left;
+	display: block;
+	height: 52px;
+	width: 45px;
+	background-color: rgb(4,141,235);
+	color:white;	
+	font-size: 13px;	
+	margin-bottom: 10px;
+	padding-top: 8px;
+}
+.list_photo div.date span {
+	font-size: 34px;
+	display: block;
+	line-height: 0.9;
+}
+.list_photo a {
+	width: 217px;
+	margin: 0;
+	font-size: 18px;
+	color: black;
+	font-family: 'tahoma';
+	cursor: pointer;
+}
+.list_photo a:hover {
+	color: rgb(4, 141, 201);
+}
+.list_photo hr {
+	clear:both;
+	margin-top: 10px;
+	width: 100%;
+	border: 0;
+	height: 2px;
+	background-color: rgb(174,174,174);
+}
+.list_photo .anons_photo {
+	padding: 9px 0px 2px 0;
+}
+.list_photo .anons p {
+	margin:5px 0;
+}
+
+.list_photo .date {
+	display: block;
+	font-size: 11px;
+	color: #2f2e2e;
+	font-family: 'verdana';
+}
+
+/*-------IMAGES--------*/
+
+.images {
+	padding-top: 42px !important;
+}
+
+.images .info span.title {
+	font-family: 'tahoma';
+	margin: 16px 0 0 0;
+	font-size: 18px;
+	color: #2f2e2e;
+}
+
+.images .info .anons {
+	font-family: 'verdana';
+	font-size: 15px;
+	color: black;
+	line-height: 15px;
+	color: #2f2e2e;
+	margin-bottom: 0;
+}
+
+.images .info .date {
+	display: block;
+	font-size: 11px;
+	margin: 6px 0 9px 0;
+	color: #2f2e2e;
+	font-family: 'verdana';
 }

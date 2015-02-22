@@ -4,7 +4,7 @@ include_once $path.'/lib/nav.php';
 $nav[1]['active'] = 'active';
 include_once $path.'/header.php'; ?>
 	<section>
-		<div class='block calendar'>
+		<div class='block calendar images'>
 			<div>
 				<?
 					$gallery_id = mysql_real_escape_string($_GET['id']);
@@ -16,16 +16,25 @@ include_once $path.'/header.php'; ?>
 					$month = array("ЯНВАРЯ", "ФЕВРАЛЯ", "МАРТА", "АПРЕЛЯ", "МАЯ", "ИЮНЯ", "ИЮЛЯ", "АВГУСТА", "СЕНТЯБРЯ", "ОКТЯБРЯ", "НОЯБРЯ", "ДЕКАБРЯ");
 					$day = date('j', $timestamp);
 					$i = date('n', $timestamp) - 1;
+					$year = date('o', $timestamp);
 				?>
-					<h1><?=$day.' '.$month[$i].' | '.$gallery_title?></h1>
-		 			<hr noshade class='block_header' >
-		 			<div class='clear'></div>
+					<h1>МЕДИА:ФОТО</h1>
+					<hr noshade class='block_header' > 
+					<div class='clear'></div>
+
+					<div class='info'>
+						<span class='title'><?=$gallery['title']?></span>
+						<div class='anons'>
+							<?=strip_tags($gallery['anons'])?>
+						</div>
+						<span class='date'><?=$day.' '.mb_strtolower($month[$i],'UTF-8').' '.$year?></span>
+					</div>
 		 			<br>
 				<?php
 					$sql="select * from photos where gallery_id = $gallery_id";
 					$result=mysql_query($sql,Database::$mConnect);
 					show('photos/index.php',$result);
-					?>				
+				?>				
 			</div>
 		</div>
 	</section>

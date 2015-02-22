@@ -14,7 +14,7 @@
 	$id = mysql_real_escape_string($_GET['id']);
 	$sql="select * from photos where gallery_id = $id";
 	$result=mysql_query($sql,Database::$mConnect);
-	show('photos/index.php',$result);
+	show('admin/images.php',$result);
 
 ?>
 </div>
