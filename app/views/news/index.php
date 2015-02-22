@@ -13,7 +13,10 @@
 					$anons = strip_tags($row['anons'], '<p>'); 
 					//$anons = $row['anons']; 
 					$position = '';
-					if (($s - 1) % 3 == 0) $position = 'first';
+					if (($s - 1) % 3 == 0 && $s != 1) {
+						$position = 'first';
+						echo '</ul>';
+					}
 					//if ($s == 1 || $s % 4 == 0 ) $position = 'first';
 					
 					$timestamp = strtotime( $row['tournament_date']);
@@ -21,11 +24,14 @@
 					$day = date('j', $timestamp);
 					$i = date('n', $timestamp) - 1;
 					$year = date('o', $timestamp);
+					if (($s - 1) % 3 == 0) echo "<ul class='elements_row'>"; 
 				?>
-				<div class='one_news <?=$position?>' id='<?=$row['id']?>'>
+				<li class='one_news <?=$position?>' id='<?=$row['id']?>'>
+					<a href='/news/show.php?id=<?=$row['id']?>'>
 					 	<div class='date'><?=$day.' '.$month[$i].' '.$year?></div>
-						<a href='/news/show.php?id=<?=$row['id']?>'><?=$row['title']?></a>
-				</div>	
+						<div class='body'><?=$row['title']?></div>
+					</a>
+				</li>	
 			<? $s++; } ?>
 			<? } else { ?>	
 				<span class='error'>К сожалению, тут новостей пока нет =(</span>

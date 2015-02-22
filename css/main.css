@@ -365,7 +365,7 @@ section hr.block_header::after {
 	margin: 0;
 	font-size: 18px;
 	padding-top: 3px;
-	color: black;
+	color: #161616;
 	//font-family: 'tahoma';
 }
 .news a:hover {
@@ -673,7 +673,7 @@ footer .address {
 	font-size: 21px;
 	display: table;
 	margin-top: 26px;
-	color: black;
+	color: #161616;
 }
 
 .calendar .title:hover {
@@ -802,7 +802,7 @@ clearfix::after {
 .event_info .value {
 	font-family: 'verdana';
 	font-size: 17px;
-	color: black;
+	color: #161616;
 	padding-left: 38px;
 	float: left;
 	width: 611px;
@@ -963,7 +963,7 @@ clearfix::after {
 	width: 217px;
 	margin: 0;
 	font-size: 18px;
-	color: black;
+	color: #161616;
 	font-family: 'tahoma';
 	cursor: pointer;
 }
@@ -1006,7 +1006,7 @@ clearfix::after {
 .video .anons {
 	font-family: 'verdana';
 	font-size: 15px;
-	color: black;
+	color: #161616;
 	line-height: 15px;
 	color: #2f2e2e;
 }
@@ -1035,7 +1035,7 @@ clearfix::after {
 	font-family: 'tahoma';
 	margin: 0;
 	font-size: 18px;
-	color: black;
+	color: #161616;
 }
 
 .media_video {
@@ -1139,6 +1139,9 @@ clearfix::after {
 	width: 219px;
 	padding-left: 8px;
 	font-family: tahoma;
+	display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .all_news ul {
@@ -1148,6 +1151,19 @@ clearfix::after {
 
 .all_news .first {
 	margin-left: 21px;
+	clear: both;
+}
+
+.all_news .elements_row {
+	margin: 0;
+	padding: 0;
+	display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .one_news .date {
@@ -1158,12 +1174,21 @@ clearfix::after {
 }
 
 .one_news a {
-	color: black;
+	color: #161616;
 	font-size: 17px;
+	width: 100%;
 }
 
 .one_news a:hover {
 	color: rgb(4, 141, 201);
+}
+
+.one_news a:hover .date {
+	color: #161616;
+}
+
+.all_news .one_news:first-child {
+	margin-left: 21px;
 }
 
 .zoom {
@@ -1312,7 +1337,7 @@ clearfix::after {
 }
 
 .calendar_v2 .next .element a:hover .body {
-	color: black;
+	color: #161616;
 }
 
 
@@ -1333,7 +1358,7 @@ clearfix::after {
 	font-family: 'tahoma';
 	font-size: 15px;
 	
-	color: black;
+	color: #161616;
 }
 
 
@@ -1407,7 +1432,7 @@ clearfix::after {
 	width: 217px;
 	margin: 0;
 	font-size: 18px;
-	color: black;
+	color: #161616;
 	font-family: 'tahoma';
 	cursor: pointer;
 }
@@ -1452,7 +1477,7 @@ clearfix::after {
 .images .info .anons {
 	font-family: 'verdana';
 	font-size: 15px;
-	color: black;
+	color: #161616;
 	line-height: 15px;
 	color: #2f2e2e;
 	margin-bottom: 0;

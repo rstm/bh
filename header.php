@@ -31,7 +31,7 @@ include ($path.'/lib/functions.php');
 <header>
 	<div>
 		<a href='/'><img src='/images/logo.png' /></a>
-		<form class='header_search' method='get' action='search.php'>
+		<form class='header_search' method='get' action='/search.php'>
 				<img src='/images/search.png'>
 				<input type='text' name='q' placeholder='Поиск'/>
 		</form>	
