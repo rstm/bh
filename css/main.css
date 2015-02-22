@@ -996,6 +996,7 @@ clearfix::after {
 }
 .video img {
 	width:100%;
+	min-height: 293px;
 }
 
 .video .info {
