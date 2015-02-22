@@ -652,6 +652,7 @@ footer .address {
 
 .calendar img {
 	max-width: 184px;
+	min-height: 104px;
 }
 
 .calendar div.image {
@@ -1381,6 +1382,7 @@ clearfix::after {
 .list_photo .url_photo img, .list_photo .url_photo object {
 	max-width: 313px;
 	//height: 175px;
+	min-height: 175px;
 }
 
 .list_photo div.date {
