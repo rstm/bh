@@ -75,6 +75,7 @@ include_once 'header.php'; ?>
 					</li>
 				</ul>
 			</div>
+			<div class='clear'></div>
 		</div>
 	</section>
 <?php include_once $path.'/footer.php'; ?>
