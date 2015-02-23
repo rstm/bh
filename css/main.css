@@ -173,7 +173,7 @@ header nav > ul a span {
 }
 
 .slidesjs-pagination {
-  margin: 15px auto 0 auto;
+  margin: 0 auto 0 auto;
 	width: 100%;
 	text-align: center;
 	list-style: none;
@@ -244,7 +244,7 @@ header nav > ul a span {
 
 .image-message {
 	color: white;
-	font-family: beausanspro_regular;
+	font-family: "beausanspro_regular";
 	z-index: 3;
 	position: absolute;
 	bottom: 1px;
@@ -428,7 +428,7 @@ footer > div {
 	padding-bottom: 48px;
 }
 .footer_menu h3 {
-	font-family: bulletin_regular;
+	font-family: "bulletin_regular";
 	color: white;
 	font-weight: 100;
 	font-size: 23px;

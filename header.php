@@ -10,12 +10,13 @@ include ($path.'/lib/functions.php');
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="/favicon.ico" type= "image/x-icon">
 
-<link href="/fonts/bulletin.css" rel="stylesheet" type="text/css"  />
+<!--link href="/fonts/bulletin.css" rel="stylesheet" type="text/css"  /-->
 
 <link href="/fonts/bebasneue.css" rel="stylesheet" type="text/css"  /> 
-<link href="/fonts/beausanspro.css" rel="stylesheet" type="text/css"  />
 <link href="/fonts/roboto/roboto.css" rel="stylesheet" type="text/css"  />
 <link href="/fonts/PFBulletinSansPro-Light/fonts.css" rel="stylesheet" type="text/css"  /> 
+<link href="/fonts/PFBulletinSansPro-Regular/fonts.css" rel="stylesheet" type="text/css"  /> 
+<link href="/fonts/PFBeauSansPro-Reg/fonts.css" rel="stylesheet" type="text/css"  /> 
 <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
