@@ -10,21 +10,21 @@ include ($path.'/lib/functions.php');
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="/favicon.ico" type= "image/x-icon">
 
+<link href="/fonts/bulletin.css" rel="stylesheet" type="text/css"  />
+
 <link href="/fonts/bebasneue.css" rel="stylesheet" type="text/css"  /> 
-<link href="/fonts/bulletin.css" rel="stylesheet" type="text/css"  /> 
 <link href="/fonts/beausanspro.css" rel="stylesheet" type="text/css"  />
 <link href="/fonts/roboto/roboto.css" rel="stylesheet" type="text/css"  />
+<link href="/fonts/PFBulletinSansPro-Light/fonts.css" rel="stylesheet" type="text/css"  /> 
 <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
 <link href="/css/lightbox.css" rel="stylesheet" type="text/css"  /> 
-<link href="/fonts/bebasneue.css" rel="stylesheet" type="text/css"  /> 
-<link href="/fonts/bulletin_v2/bulletin_sans_pro.css" rel="stylesheet" type="text/css"  /> 
-<link href="/fonts/beausanspro.css" rel="stylesheet" type="text/css"  />
 <link href="/css/main.css" rel="stylesheet" type="text/css"  />  
 
 <script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
+
 
 </head>
 <body>
