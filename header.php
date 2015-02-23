@@ -20,7 +20,7 @@ include ($path.'/lib/functions.php');
 
 <link href="/css/lightbox.css" rel="stylesheet" type="text/css"  /> 
 <link href="/fonts/bebasneue.css" rel="stylesheet" type="text/css"  /> 
-<link href="/fonts/bulletin.css" rel="stylesheet" type="text/css"  /> 
+<link href="/fonts/bulletin_v2/bulletin_sans_pro.css" rel="stylesheet" type="text/css"  /> 
 <link href="/fonts/beausanspro.css" rel="stylesheet" type="text/css"  />
 <link href="/css/main.css" rel="stylesheet" type="text/css"  />  
 
