@@ -151,7 +151,9 @@ header nav > ul a span {
 	border: 1px solid rgb(95, 93, 93);
 	color: white;
 
-
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
 
 	/*padding: 5px 5px 5px 32px;
 	background-color: black;
