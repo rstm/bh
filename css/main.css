@@ -475,6 +475,19 @@ footer .address {
 	clear: both;
 }
 
+footer .bextel img {
+	display: block;
+	margin-bottom: 5px;
+}
+
+footer .bextel {
+	float: right;
+	color: #bcbdbf;
+	font-size: 17px;
+	font-family: bulletin_light;
+	margin-top: -85px;
+}
+
 .search {
 	margin: 0 0 45px 21px;
 }
@@ -555,7 +568,7 @@ footer .address {
 .spec ul {
 	position: absolute;
 	left: 473px;
-	top: 105px;
+	top: 126px;
 	color: white;
 	width: 288px;
 	font-family: helveticaneuecyr_light;
@@ -766,7 +779,7 @@ clearfix::after {
 .show_news .text {
 	font-size: 16px !important;
 	clear: both;
-	margin-top: 40px;
+	margin-bottom: 80px;
 }
 
 .show_news .text img {
@@ -779,15 +792,41 @@ clearfix::after {
 	height: 300px;
 	margin: 0 0 31px 0;
 }
+.show_news .small_gallery {
+	//margin-top: 94px;
+}
+
+
+.show_news .small_gallery .small_gallery_image {
+	width: 313px;
+	height: 176px;
+	float: left;
+	margin: 24px 18px 68px 0;
+	overflow: hidden;
+	display: inline-block;
+	position: relative;
+}
+
+.show_news .small_gallery_image:last-child {
+	margin-right: 0;
+}
+
+.show_news .small_gallery .small_gallery_image img {
+	max-width: 313px;
+}
 
 .share_news {
 	margin-top: 76px;
+	clear: both;
 }
 
 .share_news a {
 	margin-right: 10px;
 }
 
+.event_info {
+	margin-bottom: 40px;
+}
 .event_info label {
 	font-family: 'bebas_neuebold';
 	font-size: 35px;
@@ -805,7 +844,8 @@ clearfix::after {
 	color: #161616;
 	padding-left: 38px;
 	float: left;
-	width: 611px;
+	width: 767px;
+	margin-bottom: 40px;
 }
 
 .event_info .value p {
@@ -1095,6 +1135,7 @@ clearfix::after {
 
 .game {
 	width: 470px;
+	margin-bottom: 40px;
 }
 
 .game:first-child {

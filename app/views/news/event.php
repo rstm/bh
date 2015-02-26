@@ -29,28 +29,42 @@
 						<label>ПРИЗЫ</label>
 						<div class='value'><?=$data['event_info']['prizes']?></div>				
 				<? } ?>
+				<? if ($data['news']['text']) { ?>
+					<div class='text'>
+						<?=$data['news']['text']?>
+					</div>
+				<? } ?>				
+				<div class='clear'></div>
 			</div>
-			<div class='clear'></div>
-			<div class='text'>
-				<?=$data['news']['text']?>
-			</div>
+			
+			<? if(mysql_num_rows($data['images']) > 0) { ?>
+				<div class='small_gallery'>
+				<h1>ГАЛЕРЕЯ</h1>
+				<hr noshade class='block_header' > 
+				<div class='clear'></div>				
+				<?
+					while ($image = mysql_fetch_array($data['images'])) {	
+				?>
+				<div class='small_gallery_image'>
+					<a href='/media/gallery/show.php?id=<?=$data['news']['id']?>'>
+						<img src='/images/gallery/<?=$data['news']['id'].'/'.$image['id']?>.png'/>
+					</a>
+				</div>
+				<? } ?>
+				</div>
+			<? } ?>
 			<div class='share_news'>
-				<!--a href="http://vkontakte.ru/share.php?url=http://mysite.com" target="_blank">
-					<img src='/images/vk_share.png'/>
-				</a-->
 				<!-- Put this script tag to the place, where the Share button will be -->
 				<script type="text/javascript"><!--
 				document.write(VK.Share.button(false,{type: "link_noicon", text: "<img src='/images/vk_share.png'/>"}));
 				--></script>
-
-				<!--a href="http://vkontakte.ru/share.php?url=http://mysite.com" target="_blank">
-					<img src='/images/facebook_share.png'/>
-				</a-->
 					<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http://<?=$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']?>">
 						<img src='/images/facebook_share.png'/>
 					</a>		
 			</div>
 			<div class='clear'></div>
+
+			
 		</div>
 	</div>
 </section>

@@ -15,6 +15,7 @@ include ($path.'/lib/functions.php');
 <link href="/fonts/bebasneue.css" rel="stylesheet" type="text/css"  /> 
 <link href="/fonts/roboto/roboto.css" rel="stylesheet" type="text/css"  />
 <link href="/fonts/PFBulletinSansPro-Light/fonts.css" rel="stylesheet" type="text/css"  /> 
+<link href="/fonts/HelveticaNeueCyr-Light/fonts.css" rel="stylesheet" type="text/css"  /> 
 <link href="/fonts/PFBulletinSansPro-Regular/fonts.css" rel="stylesheet" type="text/css"  /> 
 <link href="/fonts/PFBeauSansPro-Reg/fonts.css" rel="stylesheet" type="text/css"  /> 
 <!--[if lt IE 9]>

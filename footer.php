@@ -36,6 +36,10 @@
 				<div id="yellrank"></div>
 				<script src="http://www.yell.ru/yellrank/yellrank.js/?cmp=9871145&s=1"></script>
 			</div>
+			<div class='bextel'>
+				<img src='/images/bextel.png'/>
+				Разработка сайта
+			</div>
 		</div>
 	</footer>
 

@@ -61,9 +61,12 @@ if ($_POST['action']=='update') {
 }
 
 if ($_POST['action']=='new') {
-	if ($post['data']['tournament'] == 1) {	
+	if ($post['data']['tournament'] == 1 && $_FILES['userfile']['size'] != 0) {	
 		$image_name = random_string();
 		$post['data']['anons_image'] = $image_name;
+		$uploaddir = "$path/images/news/";
+		$uploadfile = $uploaddir.$image_name.'.png';
+		load_image($uploaddir, $uploadfile);
 	}
 
 	$post['data']['pub_date'] = date("Y-m-d");
@@ -76,10 +79,7 @@ if ($_POST['action']=='new') {
 	if ($post['data']['tournament'] == 1) {	
 		$last_id = mysql_insert_id(Database::$mConnect);
 		mkdir("$path/images/gallery/$last_id");
-		$uploaddir = "$path/images/news/";
-	//$uploadfile = $uploaddir.$last_id.$_FILES['userfile']['name'];
-		$uploadfile = $uploaddir.$image_name.'.png';
-		load_image($uploaddir, $uploadfile);
+		
 
 		$post['event_info']['event_id'] = $last_id;
 		create($post['event_info'], 'event_info');

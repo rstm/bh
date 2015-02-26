@@ -140,7 +140,7 @@ function update($data,$id,$table_name) {
 		$convert
 		WHERE id = $id;		
 	";
-	$result=mysql_query($sql,Database::$mConnect) or die(mysql_error());
+	$result = mysql_query($sql,Database::$mConnect) or die(mysql_error());
 }
 
 function delete($id,$table_name) {

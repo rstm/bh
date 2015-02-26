@@ -27,8 +27,12 @@ $sql = "select * from event_info where event_id = $id LIMIT 1";
 $result2 = mysql_query($sql, Database::$mConnect);
 $data['event_info'] = mysql_fetch_assoc($result2);
 
-if($data['news']['tournament'] == 1)
+if($data['news']['tournament'] == 1) {
+	$sql = "select * from photos where gallery_id = $id LIMIT 3";
+	$data['images'] = mysql_query($sql,Database::$mConnect);
+	
 	show_v2('news/event.php', $data);
+}
 else 
 	show_v2('news/show.php', $data);
 
