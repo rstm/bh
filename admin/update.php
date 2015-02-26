@@ -17,13 +17,38 @@ if($row['tournament'] == 1) {
 	tinymce.init({
 		selector:'.edit',
 	    plugins: "image jbimages link paste",
-      	toolbar: "link bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent jbimages",
+      	toolbar: "link bold italic | styleselect | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent jbimages",
 		menubar: false,
     height: 300,
       	relative_urls:false,
       	content_css : "/css/tiny_mce.css",
       	font_size_style_values : "15px",
-   	oninit : "setPlainText"
+   	oninit : "setPlainText",
+   	style_formats: [
+    {
+        title: 'Обтекание картинки слева',
+        selector: 'img',
+        styles: {
+            'float': 'left', 
+            'margin': '0 10px 10px 0'
+        }
+     },
+     {
+         title: 'Обтекание картинки справа',
+         selector: 'img', 
+         styles: {
+             'float': 'right', 
+             'margin': '0 0 10px 10px'
+         }
+     },
+     {
+         title: 'Убрать обтекание',
+         selector: 'img', 
+         styles: {
+             'float': 'none', 
+             'margin': '0'
+         }
+     }]
 	});
 </script>
 <div class='container edit_info'>

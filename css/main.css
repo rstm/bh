@@ -770,7 +770,7 @@ clearfix::after {
 }
 
 .show_news .text img {
-	width: 100%;
+	max-width: 976px;
 }
 
 .show_news img.anons {
