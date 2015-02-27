@@ -764,6 +764,10 @@ clearfix::after {
 	font-family: tahoma;
 }
 
+.show_news a {
+	color: #048deb !important;
+}
+
 .show_news h1 { margin-bottom: 0; }
 .show_news h2 { 
 	margin: 5px 0 10px 0;
@@ -848,6 +852,10 @@ clearfix::after {
 	float: left;
 	width: 767px;
 	margin-bottom: 40px;
+}
+
+.event_info .value a {
+	color: #048deb;
 }
 
 .event_info .value p {
