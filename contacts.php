@@ -3,6 +3,9 @@ $path = $_SERVER['DOCUMENT_ROOT'];
 include_once $path.'/lib/nav.php';
 $nav[4]['active'] = 'active';
 include_once 'header.php'; ?>
+<style>
+footer { margin-top: 0 !important; }
+</style>
 <section>
 	<div class='block about'>
 		<div>
