@@ -31,7 +31,8 @@
 						<div class='value'><?=$data['event_info']['prizes']?></div>				
 				<? } ?>
 				<? if ($data['news']['text']) { ?>
-					<div class='text'>
+					<label>ПОДРОБНЕЕ</label>
+					<div class='value'>
 						<?=$data['news']['text']?>
 					</div>
 				<? } ?>				
