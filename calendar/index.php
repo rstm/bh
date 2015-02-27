@@ -6,12 +6,12 @@ include_once $path.'/header.php';
 
 $sql = "
 	select * from news where tournament = 1 
-	and tournament_date > NOW()
+	and tournament_date >= current_date
 	ORDER BY tournament_date ASC
 	LIMIT 1
 ";
 $result = mysql_query($sql,Database::$mConnect) or die(mysql_error());
-	if ($next = mysql_fetch_array($result)) {
+if ($next = mysql_fetch_array($result)) {
 	$timestamp = strtotime($next['tournament_date']);
 	$day = date('j', $timestamp);
 	$i = date('n', $timestamp) - 1;
