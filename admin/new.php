@@ -40,6 +40,19 @@ include 'header.php';
      }]
 	});
 
+	tinymce.init({
+		selector:'.edit_reg_link',
+	    plugins: "link",
+      	toolbar: "link",
+		menubar: false,
+        height: '10px',
+      	relative_urls:false,
+      	content_css : "/css/tiny_mce.css",
+      	font_size_style_values : "17px",
+   	    oninit : "setPlainText",
+        statusbar : false,
+        force_p_newlines : false   	
+	});
 </script>
 <div class='container'>
 <form method="post" enctype="multipart/form-data" action="/app/models/news.php">
@@ -76,7 +89,9 @@ include 'header.php';
 			</p>
 			<p>Время:	<input type='text' name='event_info[time]' placeholder='в 9:00 утра'/></p>
 			<p>Стоимость:	<input type='text' name='event_info[cost]' placeholder='не обязательно число, можно текст'/></p>
-			<p>Регистрация:	<input type='text' name='event_info[registration]' placeholder='не обязательно ссылка, можно текст' /></p>
+			<p>Регистрация:	
+    		<textarea class='edit_reg_link' name="event_info[registration]" maxlength="99999" rows=1 cols=1 placeholder="Введите текст"></textarea> 
+			</p>
 			<p>Призы:</p>
 			<p>
 				<textarea  class='edit' name="event_info[prizes]" maxlength="99999" rows=3 cols=60 placeholder="Введите текст"></textarea> 

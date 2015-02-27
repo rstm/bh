@@ -17,6 +17,7 @@
 				
 					<label>МЕСТО</label>
 					<div class='value'>Казань, Муштари 2а "Battle Hall"</div>
+
 				<? if ($data['event_info']['cost']) { ?>
 						<label>СТОИМОСТЬ</label>
 						<div class='value'><?=$data['event_info']['cost']?></div>

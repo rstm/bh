@@ -15,16 +15,16 @@ if($row['tournament'] == 1) {
 <script src="../js/tinymce/tinymce.min.js"></script>
 <script>
 	tinymce.init({
-		selector:'.edit',
-	    plugins: "image jbimages link paste",
-      	toolbar: "link bold italic | styleselect | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent jbimages",
-		menubar: false,
+        selector:'.edit',
+        plugins: "image jbimages link paste",
+        toolbar: "link bold italic | styleselect | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent jbimages",
+        menubar: false,
     height: 300,
-      	relative_urls:false,
-      	content_css : "/css/tiny_mce.css",
-      	font_size_style_values : "15px",
-   	oninit : "setPlainText",
-   	style_formats: [
+        relative_urls:false,
+        content_css : "/css/tiny_mce.css",
+        font_size_style_values : "15px",
+    oninit : "setPlainText",
+    style_formats: [
     {
         title: 'Обтекание картинки слева',
         selector: 'img',
@@ -49,6 +49,20 @@ if($row['tournament'] == 1) {
              'margin': '0'
          }
      }]
+    });
+
+    tinymce.init({
+		selector:'.edit_reg_link',
+	    plugins: "link",
+      	toolbar: "link",
+		menubar: false,
+        height: '10px',
+      	relative_urls:false,
+      	content_css : "/css/tiny_mce.css",
+      	font_size_style_values : "17px",
+   	    oninit : "setPlainText",
+        statusbar : false,
+        force_p_newlines : false   	
 	});
 </script>
 <div class='container edit_info'>
@@ -106,9 +120,13 @@ $tournament = ($row['tournament'] == 1) ? 'checked' : '';
 
 <? if($row['tournament'] == 1) { ?>
 <p>Поменять картинку анонса(рекомендуемое разрешение 630x205): <input type="file"  name="userfile" multiple accept="image/*"></p>
-<p>Время:	<input type='text' name='event_info[time]' value="<?=$event_info['time']?>" placeholder='в 9:00 утра'/></p>
+<p>Время:	
+    <input type='text' name='event_info[time]' value="<?=$event_info['time']?>" placeholder='в 9:00 утра'/>
+</p>
 <p>Стоимость:	<input type='text' value="<?=$event_info['cost']?>" name='event_info[cost]' placeholder='не обязательно число, можно текст'/></p>
-<p>Регистрация:	<input type='text' value="<?=$event_info['registration']?>" name='event_info[registration]' placeholder='не обязательно ссылка, можно текст' /></p>
+<p>Регистрация:	
+    <textarea class='edit_reg_link' name="event_info[registration]" maxlength="99999" rows=1 cols=1 placeholder="Введите текст"><?=$event_info['registration']?></textarea> 
+</p>
 <p>Призы:</p>
 <p>
 	<textarea class='edit' name="event_info[prizes]" maxlength="99999" rows=1 cols=30 placeholder="Введите текст"><?=$event_info['prizes']?></textarea> 
