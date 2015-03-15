@@ -27,7 +27,7 @@
 			<? } ?>
 
 			<div class='clear'></div><br>
-			<h1>OLD</h1>
+			<h1>VOD</h1>
 			<hr noshade class='block_header' > 
 			<div class='clear'></div>
 

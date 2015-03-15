@@ -7,6 +7,7 @@ ul { list-style-type: none; }
 header {	
 	background-color: rgb(21,21,21);
 	height: 130px;
+	min-width: 976px;
 }
 header > div {
 	width: 976px;
@@ -227,12 +228,14 @@ header nav > ul a span {
 #slides img {
 	height: 384px;
 	width: 100%;
+	min-width: 976px;
 }
 
 .slides-container {
 	clear: both;
   margin: -1px auto;
   width: 100%;
+  min-width: 976px;
   height: 420px;
 }
 
@@ -423,6 +426,7 @@ footer {
 	background-color: rgb(21,21,21);
 	//height: 327px;
 	margin-top: 170px;
+	min-width: 976px;
 }
 footer > div {
 	width: 976px;
@@ -866,16 +870,17 @@ clearfix::after {
 
 .about img {
 	display: inline-block;
-	margin-bottom: 40px;
 	width: 455px;
+	float: left;	
+	margin: 0 29px 20px 0;
 }
 
 .about .info {
 	display: inline-block;
-	width: 470px;
+	width: 100%;
 	vertical-align: top;
 	font-family: verdana;
-	margin-left: 29px;
+	margin-bottom: 40px;
 }
 
 .about .info h2 {
@@ -890,6 +895,13 @@ clearfix::after {
 	width: 210px;
 	background-color: #4f99dd;
 	margin: 22px 0 0 0;
+}
+
+.about .info .blue {
+	color: rgb(79,153,221);
+	text-indent: 44px;
+	font-size: 25px;
+	margin: 0;
 }
 .social {
 	text-align: center;

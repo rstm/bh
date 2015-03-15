@@ -1,7 +1,7 @@
 <section>
 	<div class='block media streams'>
 		<div>
-			<h1>OLD</h1>
+			<h1>VOD</h1>
 			<hr noshade class='block_header' > 
 			<div class='clear'></div>
 
