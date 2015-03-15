@@ -904,12 +904,7 @@ clearfix::after {
 	font-size: 25px;
 	margin: 0;
 }
-.about .info p:nth-child(odd) {
-  color: rgb(107, 107, 107);
-}
-.about .info p:last-child {
-	color: #161616;
-}
+
 .social {
 	text-align: center;
 	font-size: 27px;
