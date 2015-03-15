@@ -898,17 +898,23 @@ clearfix::after {
 }
 
 .about .info .blue {
-	color: rgb(79,153,221);
+	//color: rgb(79,153,221);
+	color: rgb(39, 124, 203);
 	text-indent: 44px;
 	font-size: 25px;
 	margin: 0;
+}
+.about .info p:nth-child(odd) {
+  color: rgb(107, 107, 107);
+}
+.about .info p:last-child {
+	color: #161616;
 }
 .social {
 	text-align: center;
 	font-size: 27px;
 	font-family: robotoregular;
 	margin: 20px 0 62px 0;
-
 }
 
 .social a {
