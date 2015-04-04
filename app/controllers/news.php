@@ -2,13 +2,13 @@
 	$path = $_SERVER['DOCUMENT_ROOT'];
 	include ($path.'/lib/functions.php');
 
-	$last_id = mysql_real_escape_string($_GET['last_id']);
-	$sql="select * from news where id < $last_id ORDER BY pub_date DESC, time DESC LIMIT 6";
+	$offset = mysql_real_escape_string($_GET['offset']);
+	$sql="select * from news where main = 1 ORDER BY tournament_date DESC, time DESC LIMIT 6 OFFSET $offset";
 	$data['result'] = mysql_query($sql,Database::$mConnect);
-	if (mysql_num_rows($result) == 0) {
+	if (mysql_num_rows($data['result']) == 0) {
 		header('HTTP/1.1 204 No content', true, 204);
 		exit();
 	}
-	show_v2('news/index.php', $data['result']);
+	show_v2('news/main.php', $data);
 
 ?>

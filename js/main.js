@@ -71,8 +71,9 @@ $(document).ready(function() {
       $('.loading').css('display','block');
       offset = $('.more').offset().top;
       //alert(offset);
-      var last_id = $(this).prev('.news').attr('id');
-      $(".more").before($("<div>").css('display','none').load("/app/controllers/news.php?last_id=" + last_id,
+      //var last_id = $(this).prev('.news').attr('id');
+      var news_offset = $('.news').length;
+      $(".more").before($("<div>").css('display','none').load("/app/controllers/news.php?offset=" + news_offset,
           function(response, status, xhr) {
             $('.loading').css('display','none');
             if(xhr.status != 204) {
@@ -80,6 +81,8 @@ $(document).ready(function() {
               $('html, body').animate({
                           scrollTop: offset
                       }, 1000);
+            } else {
+              document.location.href = '/news/?category_id=2';
             }
           }
         )); 
