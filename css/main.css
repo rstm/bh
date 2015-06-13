@@ -523,6 +523,10 @@ footer .bextel {
 	height: 40px;
 	margin: 0 5px 13px 0;
 }
+
+#counter {
+	display: none;
+}
 /*-------SYSTEM INFO--------*/
 
 .system_info {
