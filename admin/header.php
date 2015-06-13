@@ -21,6 +21,7 @@ check_login();
 				<li><a href='/admin/gallery'>Галерея</a></li>
 				<li><a href='/admin/media.php'>Медиа</a></li>
 				<li><a href='/admin/team/'>Команда</a></li>
+				<li><a href='/admin/prices.php'>Цены</a></li>
 				<li class='block_begin'><span>Cтримы :</span></li>
 				<li><a href='/admin/streams/live.php'>LIVE</a></li>
 				<li><a href='/admin/streams/old.php'>OLD</a></li>
