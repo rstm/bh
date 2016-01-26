@@ -28,7 +28,7 @@
 			
 			<div class='address'>
 				<img src='/images/footer_logo.png' />
-				<br>Казань, ул. Муштари, 2а, 8 (843) 580-00-01
+				<br>Казань, ул. Муштари, 2а, 8 (843) 205-99-99
 			</div>
 			<div class='small_contact'>
 				<a href='http://www.youtube.com/channel/UCwXUHVuYcenAvyoqJ2hS_vg'><img class='social_mini' src='/images/small_youtube_hover.png'  /></a>

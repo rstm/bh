@@ -10,7 +10,7 @@ include_once 'header.php'; ?>
 			<div class='image-message'>
 				<h2>BATTLE HALL</h2>
 				<p>
-					Казань, Муштари 2а, 8435800001, круглосуточно
+					Казань, Муштари 2а, 8432059999, круглосуточно
 				</p>
 			</div>
     		<img src="/images/slide1.png" alt='asd' >  
